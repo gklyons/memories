@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */; };
+		63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */; };
+		63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6881F705BB600B1DC23 /* PersonController.swift */; };
+		63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */; };
+		63E2B68E1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B68C1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld */; };
+		63E2B6901F705CA800B1DC23 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B68F1F705CA800B1DC23 /* CoreDataStack.swift */; };
 		D42723831F70245D00700EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42723821F70245D00700EC7 /* AppDelegate.swift */; };
-		D42723851F70245D00700EC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42723841F70245D00700EC7 /* ViewController.swift */; };
 		D42723881F70245D00700EC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42723861F70245D00700EC7 /* Main.storyboard */; };
 		D427238A1F70245D00700EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42723891F70245D00700EC7 /* Assets.xcassets */; };
 		D427238D1F70245D00700EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */; };
@@ -34,9 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+Convenience.swift"; sourceTree = "<group>"; };
+		63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Memory+Convenience.swift"; sourceTree = "<group>"; };
+		63E2B6881F705BB600B1DC23 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
+		63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryController.swift; sourceTree = "<group>"; };
+		63E2B68D1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoriesCoreData.xcdatamodel; sourceTree = "<group>"; };
+		63E2B68F1F705CA800B1DC23 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D427237F1F70245D00700EC7 /* Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42723821F70245D00700EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D42723841F70245D00700EC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D42723871F70245D00700EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D42723891F70245D00700EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D427238C1F70245D00700EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +84,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63E2B6781F705ABA00B1DC23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63E2B68C1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld */,
+				63E2B68F1F705CA800B1DC23 /* CoreDataStack.swift */,
+				63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */,
+				63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		63E2B6791F705AC900B1DC23 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				63E2B6881F705BB600B1DC23 /* PersonController.swift */,
+				63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */,
+			);
+			name = ModelControllers;
+			sourceTree = "<group>";
+		};
+		63E2B67A1F705ACE00B1DC23 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		63E2B67B1F705AD500B1DC23 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */,
+				D42723861F70245D00700EC7 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		63E2B67C1F705ADC00B1DC23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D42723821F70245D00700EC7 /* AppDelegate.swift */,
+				D42723891F70245D00700EC7 /* Assets.xcassets */,
+				D427238E1F70245D00700EC7 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		D42723761F70245D00700EC7 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +153,11 @@
 		D42723811F70245D00700EC7 /* Memories */ = {
 			isa = PBXGroup;
 			children = (
-				D42723821F70245D00700EC7 /* AppDelegate.swift */,
-				D42723841F70245D00700EC7 /* ViewController.swift */,
-				D42723861F70245D00700EC7 /* Main.storyboard */,
-				D42723891F70245D00700EC7 /* Assets.xcassets */,
-				D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */,
-				D427238E1F70245D00700EC7 /* Info.plist */,
+				63E2B6781F705ABA00B1DC23 /* Models */,
+				63E2B6791F705AC900B1DC23 /* ModelControllers */,
+				63E2B67A1F705ACE00B1DC23 /* ViewControllers */,
+				63E2B67B1F705AD500B1DC23 /* Storyboard */,
+				63E2B67C1F705ADC00B1DC23 /* Resources */,
 			);
 			path = Memories;
 			sourceTree = "<group>";
@@ -259,8 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D42723851F70245D00700EC7 /* ViewController.swift in Sources */,
+				63E2B6901F705CA800B1DC23 /* CoreDataStack.swift in Sources */,
+				63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */,
 				D42723831F70245D00700EC7 /* AppDelegate.swift in Sources */,
+				63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */,
+				63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */,
+				63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */,
+				63E2B68E1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +565,7 @@
 				D42723A91F70245E00700EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D42723AA1F70245E00700EC7 /* Build configuration list for PBXNativeTarget "MemoriesTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +574,7 @@
 				D42723AC1F70245E00700EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D42723AD1F70245E00700EC7 /* Build configuration list for PBXNativeTarget "MemoriesUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,8 +583,22 @@
 				D42723AF1F70245E00700EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		63E2B68C1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				63E2B68D1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodel */,
+			);
+			currentVersion = 63E2B68D1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodel */;
+			path = MemoriesCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D42723771F70245D00700EC7 /* Project object */;
 }
