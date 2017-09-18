@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import UIKit
+
+class MemoryController {
+    
+    // MARK: - CRUD Functions
+    
+    static func createMemory(title: String, timestamp: Date = Date(), person: Person) {
+        let _ = Memory(title: title, timestamp: timestamp, person: person)
+        PersonController.shared.saveToPersistentStore()
+    }
+    
+    static func deleteMemory(memory: Memory) {
+        if let moc = memory.managedObjectContext {
+            moc.delete(memory)
+            PersonController.shared.saveToPersistentStore()
+        }
+    }
+    
+    
+}

@@ -13,6 +13,10 @@
 		63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */; };
 		63E2B68E1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B68C1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld */; };
 		63E2B6901F705CA800B1DC23 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B68F1F705CA800B1DC23 /* CoreDataStack.swift */; };
+		63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6911F706AAF00B1DC23 /* Tag+Convenience.swift */; };
+		63E2B6941F706AB700B1DC23 /* Photo+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6931F706AB700B1DC23 /* Photo+Convenience.swift */; };
+		63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6951F706EF000B1DC23 /* TagController.swift */; };
+		63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6971F706EF800B1DC23 /* PhotoController.swift */; };
 		D42723831F70245D00700EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42723821F70245D00700EC7 /* AppDelegate.swift */; };
 		D42723881F70245D00700EC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42723861F70245D00700EC7 /* Main.storyboard */; };
 		D427238A1F70245D00700EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42723891F70245D00700EC7 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 		63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryController.swift; sourceTree = "<group>"; };
 		63E2B68D1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoriesCoreData.xcdatamodel; sourceTree = "<group>"; };
 		63E2B68F1F705CA800B1DC23 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		63E2B6911F706AAF00B1DC23 /* Tag+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+Convenience.swift"; sourceTree = "<group>"; };
+		63E2B6931F706AB700B1DC23 /* Photo+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+Convenience.swift"; sourceTree = "<group>"; };
+		63E2B6951F706EF000B1DC23 /* TagController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagController.swift; sourceTree = "<group>"; };
+		63E2B6971F706EF800B1DC23 /* PhotoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		D427237F1F70245D00700EC7 /* Memories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42723821F70245D00700EC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D42723871F70245D00700EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +99,8 @@
 				63E2B68F1F705CA800B1DC23 /* CoreDataStack.swift */,
 				63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */,
 				63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */,
+				63E2B6911F706AAF00B1DC23 /* Tag+Convenience.swift */,
+				63E2B6931F706AB700B1DC23 /* Photo+Convenience.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -100,6 +110,8 @@
 			children = (
 				63E2B6881F705BB600B1DC23 /* PersonController.swift */,
 				63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */,
+				63E2B6951F706EF000B1DC23 /* TagController.swift */,
+				63E2B6971F706EF800B1DC23 /* PhotoController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -316,8 +328,12 @@
 			files = (
 				63E2B6901F705CA800B1DC23 /* CoreDataStack.swift in Sources */,
 				63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */,
+				63E2B6941F706AB700B1DC23 /* Photo+Convenience.swift in Sources */,
 				D42723831F70245D00700EC7 /* AppDelegate.swift in Sources */,
 				63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */,
+				63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */,
+				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
+				63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */,
 				63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */,
 				63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */,
 				63E2B68E1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld in Sources */,

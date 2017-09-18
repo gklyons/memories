@@ -1,5 +1,5 @@
 //
-//  Person+Convenience.swift
+//  Photo+Convenience.swift
 //  Memories
 //
 //  Created by Caleb Strong on 9/18/17.
@@ -9,11 +9,11 @@
 import Foundation
 import CoreData
 
-extension Person {
+extension Photo {
     
-    convenience init(name: String, photo: NSData, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(photo: NSData, memory: Memory, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
-        self.name = name
         self.photo = photo
+        self.memory = memory
     }
 }
