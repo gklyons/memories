@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		637F670E1F7179B10007CC73 /* PeopleTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F670D1F7179B10007CC73 /* PeopleTabViewController.swift */; };
+		637F67101F7182C40007CC73 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F670F1F7182C40007CC73 /* PersonViewController.swift */; };
+		637F67141F71918E0007CC73 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F67131F71918E0007CC73 /* MemoryViewController.swift */; };
+		637F67161F71964F0007CC73 /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F67151F71964F0007CC73 /* TagButton.swift */; };
 		63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */; };
 		63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */; };
 		63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6881F705BB600B1DC23 /* PersonController.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		637F670D1F7179B10007CC73 /* PeopleTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTabViewController.swift; sourceTree = "<group>"; };
+		637F670F1F7182C40007CC73 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		637F67131F71918E0007CC73 /* MemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
+		637F67151F71964F0007CC73 /* TagButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+Convenience.swift"; sourceTree = "<group>"; };
 		63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Memory+Convenience.swift"; sourceTree = "<group>"; };
 		63E2B6881F705BB600B1DC23 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,9 @@
 		63E2B67A1F705ACE00B1DC23 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				637F670D1F7179B10007CC73 /* PeopleTabViewController.swift */,
+				637F670F1F7182C40007CC73 /* PersonViewController.swift */,
+				637F67131F71918E0007CC73 /* MemoryViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -126,8 +137,9 @@
 		63E2B67B1F705AD500B1DC23 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */,
 				D42723861F70245D00700EC7 /* Main.storyboard */,
+				D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */,
+				637F67151F71964F0007CC73 /* TagButton.swift */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -327,14 +339,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E2B6901F705CA800B1DC23 /* CoreDataStack.swift in Sources */,
+				637F67141F71918E0007CC73 /* MemoryViewController.swift in Sources */,
+				637F67101F7182C40007CC73 /* PersonViewController.swift in Sources */,
 				63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */,
 				63E2B6941F706AB700B1DC23 /* Photo+Convenience.swift in Sources */,
+				637F670E1F7179B10007CC73 /* PeopleTabViewController.swift in Sources */,
 				D42723831F70245D00700EC7 /* AppDelegate.swift in Sources */,
 				63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */,
 				63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */,
 				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
 				63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */,
 				63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */,
+				637F67161F71964F0007CC73 /* TagButton.swift in Sources */,
 				63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */,
 				63E2B68E1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld in Sources */,
 			);
