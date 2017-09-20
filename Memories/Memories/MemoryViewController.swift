@@ -13,7 +13,7 @@ class MemoryViewController: UIViewController {
     // MARK: - Properties
     
     var buttonArray: [TagButton] = []
-    var person = Person(name: "", photo: nil)
+    var person: Person?
     
     // MARK: - IBOutlets
     
@@ -29,7 +29,8 @@ class MemoryViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = memoryTitleTextField.text, !title.isEmpty,
-            let info = memoryInfoTextView.text, !info.isEmpty else { return }
+            let info = memoryInfoTextView.text, !info.isEmpty,
+            let person = person else { return }
         let memory = Memory(title: title, memoryInfo: info, person: person)
         MemoryController.createMemory(title: title, memoryInfo: info, person: person)
         

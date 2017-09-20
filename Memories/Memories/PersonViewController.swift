@@ -13,7 +13,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     // MARK - Properties
     
     var imagePicker = UIImagePickerController()
-    var person = Person(name: "", photo: nil)
+    var person: Person?
     var memories: [Memory] = []
     
     // MARK: - IBOutlets
@@ -69,9 +69,10 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         memoryListTableView.dataSource = self
         memoryListTableView.delegate = self
         
-        if person.name != "" {
-            personNameTextField.text = person.name
-            guard let photo = UIImage(data: person.photo! as Data, scale: 1.0) else { return }
+        if person != nil {
+            personNameTextField.text = person?.name
+            guard let data = person?.photo as Data? else { return }
+            guard let photo = UIImage(data: data, scale: 1.0) else { return }
             personPhotoImageView.image = photo
         }
     }
@@ -100,7 +101,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToMemoryView" {
-            let person = self.person
+            guard let person = self.person else { return }
             let memoryVC = segue.destination as? MemoryViewController
             memoryVC?.person = person
         }
