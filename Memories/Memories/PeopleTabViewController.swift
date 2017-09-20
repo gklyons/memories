@@ -1,4 +1,4 @@
-//
+    //
 //  PeopleTabViewController.swift
 //  Memories
 //
@@ -54,5 +54,11 @@ class PeopleTabViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToPersonViewFromPersonCell",
+            let indexPath = peopleListTableView.indexPathForSelectedRow {
+            let person: Person = PersonController.shared.people[indexPath.row]
+            let personVC = segue.destination as? PersonViewController
+            personVC?.person = person
+        }
     }
 }

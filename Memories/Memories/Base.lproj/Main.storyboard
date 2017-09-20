@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="Hfa-sn-s1g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6GI-29-COO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="DOY-WX-qjk" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4ZC-1X-gL4"/>
@@ -43,13 +42,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="v2D-0a-QKD"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6GI-29-COO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1180" y="178.56071964017991"/>
         </scene>
         <!--People Tab View Controller-->
         <scene sceneID="lGy-AO-06P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NOb-ul-Ta3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="sSQ-0q-mbe" customClass="PeopleTabViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="del-vV-mGl"/>
@@ -70,6 +69,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ak1-yN-keV" kind="show" identifier="ToPersonViewFromPersonCell" id="u57-6w-cLA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -93,6 +95,7 @@
                         <outlet property="peopleListTableView" destination="LYL-9y-x69" id="cmw-OF-Mft"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOb-ul-Ta3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1180" y="-476.31184407796104"/>
         </scene>
@@ -165,7 +168,7 @@
                                 <state key="normal" title="New Memory"/>
                                 <connections>
                                     <action selector="newMemoryButtonTapped:" destination="ak1-yN-keV" eventType="touchUpInside" id="VHD-yc-KiY"/>
-                                    <segue destination="U9k-a8-uos" kind="show" id="4fp-yH-6Ld"/>
+                                    <segue destination="U9k-a8-uos" kind="show" identifier="ToMemoryView" id="4fp-yH-6Ld"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -234,7 +237,6 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4m-Iq-hma">
                                 <rect key="frame" x="8" y="284" width="359" height="205"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="selectMemoryPhotoButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="c7U-6a-NSh"/>
                                 </connections>
@@ -344,7 +346,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="UZK-K8-QxJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lWH-By-QlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="MLP-Q5-QjD" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2TP-i2-7na">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -356,13 +357,13 @@
                         <segue destination="BUV-1T-vAz" kind="relationship" relationship="viewControllers" id="mOb-oy-5Ea"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWH-By-QlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-710" y="-149"/>
         </scene>
         <!--All people-->
         <scene sceneID="e0E-i9-AKu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pdf-s7-MUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHM-PD-4ay" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="All people" id="sVN-tU-t3J"/>
                     <toolbarItems/>
@@ -375,13 +376,13 @@
                         <segue destination="sSQ-0q-mbe" kind="relationship" relationship="rootViewController" id="mX5-7j-jnk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdf-s7-MUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240.80000000000001" y="-476.31184407796104"/>
         </scene>
         <!--Groups-->
         <scene sceneID="TdF-ls-CLa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gda-aq-Bn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUV-1T-vAz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Groups" id="4Pv-RI-YRD"/>
                     <toolbarItems/>
@@ -394,8 +395,12 @@
                         <segue destination="DOY-WX-qjk" kind="relationship" relationship="rootViewController" id="80h-Nl-6Wp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gda-aq-Bn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240.80000000000001" y="178.56071964017991"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="u57-6w-cLA"/>
+    </inferredMetricsTieBreakers>
 </document>

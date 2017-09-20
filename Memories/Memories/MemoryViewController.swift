@@ -13,6 +13,7 @@ class MemoryViewController: UIViewController {
     // MARK: - Properties
     
     var buttonArray: [TagButton] = []
+    var person = Person(name: "", photo: nil)
     
     // MARK: - IBOutlets
     
@@ -27,6 +28,21 @@ class MemoryViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let title = memoryTitleTextField.text, !title.isEmpty,
+            let info = memoryInfoTextView.text, !info.isEmpty else { return }
+        let timestamp = Date()
+        let memory = Memory(title: title, memoryInfo: info, timestamp: timestamp, person: person)
+        MemoryController.createMemory(title: title, memoryInfo: info, timestamp: timestamp, person: person)
+        
+        var tag: String
+        for button in buttonArray {
+            if button.isEnabled == false {
+                tag = button.titleLabel!.text!
+                TagController.createTag(tag: tag, memory: memory)
+            }
+        }
+        
+        guard let photo = memoryPhotoImageView.image else { return }
         
     }
     
@@ -34,15 +50,19 @@ class MemoryViewController: UIViewController {
     }
     
     @IBAction func happyButtonTapped(_ sender: Any) {
+        buttonArray = tagButtonWasTapped(tappedButton: happyButton)
     }
     
     @IBAction func sadButtonTapped(_ sender: Any) {
+        buttonArray = tagButtonWasTapped(tappedButton: sadButton)
     }
     
     @IBAction func funnyButtonTapped(_ sender: Any) {
+        buttonArray = tagButtonWasTapped(tappedButton: funnyButton)
     }
     
     @IBAction func seriousButtonTapped(_ sender: Any) {
+        buttonArray = tagButtonWasTapped(tappedButton: seriousButton)
     }
     
     override func viewDidLoad() {
@@ -65,3 +85,25 @@ class MemoryViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

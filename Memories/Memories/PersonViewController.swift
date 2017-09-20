@@ -13,6 +13,8 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     // MARK - Properties
     
     var imagePicker = UIImagePickerController()
+    var person = Person(name: "", photo: nil)
+    var memories: [Memory] = []
     
     // MARK: - IBOutlets
     
@@ -66,25 +68,39 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         personNameTextField.delegate = self
         memoryListTableView.dataSource = self
         memoryListTableView.delegate = self
+        
+        if person.name != "" {
+            personNameTextField.text = person.name
+            guard let photo = UIImage(data: person.photo! as Data, scale: 1.0) else { return }
+            personPhotoImageView.image = photo
+        }
+        
     }
     
     // MARK: - Memory List Table View Data Source Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return memories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoryCell")
         
-        
-        
+        let memory = memories[indexPath.row]
+        cell?.textLabel?.text = memory.title
+        cell?.detailTextLabel?.text = "\(memory.timestamp)"
+   
         return cell ?? UITableViewCell()
     }
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToMemoryView" {
+            let person = self.person
+            let memoryVC = segue.destination as? MemoryViewController
+            memoryVC?.person = person
+        }
     }
 }
 
