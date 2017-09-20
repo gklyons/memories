@@ -30,19 +30,20 @@ class MemoryViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = memoryTitleTextField.text, !title.isEmpty,
             let info = memoryInfoTextView.text, !info.isEmpty else { return }
-        let timestamp = Date()
-        let memory = Memory(title: title, memoryInfo: info, timestamp: timestamp, person: person)
-        MemoryController.createMemory(title: title, memoryInfo: info, timestamp: timestamp, person: person)
+        let memory = Memory(title: title, memoryInfo: info, person: person)
+        MemoryController.createMemory(title: title, memoryInfo: info, person: person)
         
-        var tag: String
-        for button in buttonArray {
-            if button.isEnabled == false {
-                tag = button.titleLabel!.text!
-                TagController.createTag(tag: tag, memory: memory)
-            }
-        }
+//        var tag: String
+//        for button in buttonArray {
+//            if button.isEnabled == false {
+//                tag = button.titleLabel!.text!
+//                TagController.createTag(tag: tag, memory: memory)
+//            }
+//        }
+//        
+//        guard let photo = memoryPhotoImageView.image else { return }
         
-        guard let photo = memoryPhotoImageView.image else { return }
+        self.navigationController?.popViewController(animated: true)
         
     }
     

@@ -74,7 +74,10 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
             guard let photo = UIImage(data: person.photo! as Data, scale: 1.0) else { return }
             personPhotoImageView.image = photo
         }
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        memoryListTableView.reloadData()
     }
     
     // MARK: - Memory List Table View Data Source Functions
