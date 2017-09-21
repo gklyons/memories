@@ -31,8 +31,8 @@ class MemoryViewController: UIViewController {
         guard let title = memoryTitleTextField.text, !title.isEmpty,
             let info = memoryInfoTextView.text, !info.isEmpty,
             let person = person else { return }
-        let memory = Memory(title: title, memoryInfo: info, person: person)
-        MemoryController.createMemory(title: title, memoryInfo: info, person: person)
+        let people = NSSet(array: [person])
+        MemoryController.createMemory(title: title, memoryInfo: info, people: people)
         
 //        var tag: String
 //        for button in buttonArray {
@@ -41,7 +41,10 @@ class MemoryViewController: UIViewController {
 //                TagController.createTag(tag: tag, memory: memory)
 //            }
 //        }
-//        
+//        let tags = NSSet(array: [tag])
+        
+//        let memory = Memory(title: title, memoryInfo: info, timestamp: Date(), people: people)
+//
 //        guard let photo = memoryPhotoImageView.image else { return }
         
         self.navigationController?.popViewController(animated: true)
@@ -80,6 +83,7 @@ class MemoryViewController: UIViewController {
         
         return buttonArray
     }
+    
     
     // MARK: - Navigation
 

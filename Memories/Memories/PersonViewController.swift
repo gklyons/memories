@@ -14,7 +14,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     var imagePicker = UIImagePickerController()
     var person: Person?
-    var memories: [Memory] = []
+
     
     // MARK: - IBOutlets
     
@@ -85,17 +85,31 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     // MARK: - Memory List Table View Data Source Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let memories = person?.memories else { return 0 }
         return memories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemoryCell")
         
-        let memory = memories[indexPath.row]
+        guard let memories = person?.memories else { return UITableViewCell() }
+        let memoriesArray = Array(memories)
+        guard let memory = memoriesArray[indexPath.row] as? Memory else { return UITableViewCell() }
+        
         cell?.textLabel?.text = memory.title
         cell?.detailTextLabel?.text = "\(String(describing: memory.timestamp))"
    
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let memories = person?.memories else { return }
+            let memoriesArray = Array(memories)
+            guard let memory = memoriesArray[indexPath.row] as? Memory else { return }
+            MemoryController.deleteMemory(memory: memory)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     // MARK: - Navigation

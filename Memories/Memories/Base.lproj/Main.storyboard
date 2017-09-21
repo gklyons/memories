@@ -217,13 +217,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Memory Title here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHE-ou-3sQ">
-                                <rect key="frame" x="8" y="112" width="359" height="30"/>
+                                <rect key="frame" x="8" y="72" width="359" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your memory here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-Kt-AIW">
-                                <rect key="frame" x="8" y="150" width="359" height="166"/>
+                                <rect key="frame" x="8" y="110" width="359" height="166"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="166" id="JiS-Bb-g55"/>
@@ -232,10 +232,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-SX-tSP">
-                                <rect key="frame" x="8" y="324" width="359" height="164.5"/>
+                                <rect key="frame" x="8" y="284" width="359" height="204.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4m-Iq-hma">
-                                <rect key="frame" x="8" y="324" width="359" height="165"/>
+                                <rect key="frame" x="8" y="284" width="359" height="205"/>
                                 <connections>
                                     <action selector="selectMemoryPhotoButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="c7U-6a-NSh"/>
                                 </connections>

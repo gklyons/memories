@@ -12,10 +12,10 @@ class TagController {
     
     // MARK: - CRUD Functions
     
-    static func createTag(tag: String, memory: Memory) {
-        let _ = Tag(tag: tag, memory: memory)
-        PersonController.shared.saveToPersistentStore()
-    }
+//    static func createTag(tag: String, memory: Memory) {
+//        let _ = Tag(tag: tag, memory: memory)
+//        PersonController.shared.saveToPersistentStore()
+//    }
     
     static func deleteTag(tag: Tag) {
         if let moc = tag.managedObjectContext {

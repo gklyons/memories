@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 
 extension Tag {
-    convenience init(tag: String, memory: Memory, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(tag: String, memories: NSSet, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.tag = tag
-        self.memory = memory
+        self.memories = memories
     }
 }
