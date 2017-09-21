@@ -79,6 +79,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     override func viewWillAppear(_ animated: Bool) {
         memoryListTableView.reloadData()
+
     }
     
     // MARK: - Memory List Table View Data Source Functions
@@ -92,7 +93,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         let memory = memories[indexPath.row]
         cell?.textLabel?.text = memory.title
-        cell?.detailTextLabel?.text = "\(memory.timestamp)"
+        cell?.detailTextLabel?.text = "\(String(describing: memory.timestamp))"
    
         return cell ?? UITableViewCell()
     }
