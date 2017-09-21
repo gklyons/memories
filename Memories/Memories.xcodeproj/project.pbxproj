@@ -15,6 +15,8 @@
 		637F67101F7182C40007CC73 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F670F1F7182C40007CC73 /* PersonViewController.swift */; };
 		637F67141F71918E0007CC73 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F67131F71918E0007CC73 /* MemoryViewController.swift */; };
 		637F67161F71964F0007CC73 /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F67151F71964F0007CC73 /* TagButton.swift */; };
+		63C3892B1F73148600FDF9FF /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3892A1F73148600FDF9FF /* GroupController.swift */; };
+		63C3892D1F7314C200FDF9FF /* Group+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3892C1F7314C200FDF9FF /* Group+Convenience.swift */; };
 		63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */; };
 		63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */; };
 		63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6881F705BB600B1DC23 /* PersonController.swift */; };
@@ -59,6 +61,8 @@
 		637F670F1F7182C40007CC73 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		637F67131F71918E0007CC73 /* MemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		637F67151F71964F0007CC73 /* TagButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
+		63C3892A1F73148600FDF9FF /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
+		63C3892C1F7314C200FDF9FF /* Group+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+Convenience.swift"; sourceTree = "<group>"; };
 		63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+Convenience.swift"; sourceTree = "<group>"; };
 		63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Memory+Convenience.swift"; sourceTree = "<group>"; };
 		63E2B6881F705BB600B1DC23 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */,
 				63E2B6911F706AAF00B1DC23 /* Tag+Convenience.swift */,
 				63E2B6931F706AB700B1DC23 /* Photo+Convenience.swift */,
+				63C3892C1F7314C200FDF9FF /* Group+Convenience.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */,
 				63E2B6951F706EF000B1DC23 /* TagController.swift */,
 				63E2B6971F706EF800B1DC23 /* PhotoController.swift */,
+				63C3892A1F73148600FDF9FF /* GroupController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -149,9 +155,9 @@
 			children = (
 				D42723861F70245D00700EC7 /* Main.storyboard */,
 				D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */,
-				637F67151F71964F0007CC73 /* TagButton.swift */,
 				633BE0D31F72E37E003D2A56 /* GroupVC.storyboard */,
 				633BE0D91F72EA8C003D2A56 /* SelectPersonTableViewCell.swift */,
+				637F67151F71964F0007CC73 /* TagButton.swift */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -362,9 +368,11 @@
 				63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */,
 				63E2B6941F706AB700B1DC23 /* Photo+Convenience.swift in Sources */,
 				633BE0D81F72E40F003D2A56 /* NewGroupViewController.swift in Sources */,
+				63C3892B1F73148600FDF9FF /* GroupController.swift in Sources */,
 				637F670E1F7179B10007CC73 /* PeopleTabViewController.swift in Sources */,
 				633BE0DA1F72EA8C003D2A56 /* SelectPersonTableViewCell.swift in Sources */,
 				D42723831F70245D00700EC7 /* AppDelegate.swift in Sources */,
+				63C3892D1F7314C200FDF9FF /* Group+Convenience.swift in Sources */,
 				63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */,
 				63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */,
 				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
