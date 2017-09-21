@@ -10,12 +10,11 @@ import Foundation
 import CoreData
 
 extension Memory {
-    
     convenience init(title: String, memoryInfo: String, timestamp: Date = Date(), person: Person, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.title = title
         self.memoryInfo = memoryInfo
-        self.timestamp = timestamp as NSDate
+        self.timestamp = timestamp
         self.person = person
     }
 }

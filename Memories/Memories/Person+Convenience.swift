@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 extension Person {
-    
-    convenience init(name: String, photo: NSData?, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(name: String, photo: NSData?, isSelected: Bool, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.name = name
-        self.photo = photo
+        self.photo = photo as Data?
+        self.isSelected = isSelected
     }
 }
