@@ -45,7 +45,6 @@ class MemoryViewController: UIViewController {
 //        guard let photo = memoryPhotoImageView.image else { return }
         
         self.navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func selectMemoryPhotoButtonTapped(_ sender: Any) {
