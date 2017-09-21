@@ -17,10 +17,10 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: - IBActions
     
     @objc func deleteButtonTapped(_ sender: UIButton) {
-        guard let section = groupTableView.indexPathForSelectedRow else { return }
-        let group = GroupController.shared.groups[section.row]
+        let section = sender.tag
+        let group = GroupController.shared.groups[section]
         GroupController.shared.deleteGroup(group: group)
-        groupTableView.deleteSections(NSIndexSet(index: section.row) as IndexSet, with: .automatic)
+        groupTableView.deleteSections(NSIndexSet(index: section) as IndexSet, with: .automatic)
     }
     
     override func viewDidLoad() {
@@ -60,6 +60,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         deleteButton.setTitle("-", for: .normal)
         deleteButton.backgroundColor = .red
         deleteButton.setTitleColor(.black, for: .normal)
+        deleteButton.tag = section
         deleteButton.addTarget(self, action: #selector(GroupViewController.deleteButtonTapped(_:)), for: .touchUpInside)
         
         let horizontalStackView = UIStackView(arrangedSubviews: [headerButton, deleteButton])
