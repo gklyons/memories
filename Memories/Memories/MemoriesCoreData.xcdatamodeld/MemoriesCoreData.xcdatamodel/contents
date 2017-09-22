@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="memoryInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="occasion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Occasion" inverseName="event" inverseEntity="Occasion" syncable="YES"/>
+    </entity>
     <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="people" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="groups" inverseEntity="Person" syncable="YES"/>
@@ -11,6 +17,10 @@
         <relationship name="people" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="memories" inverseEntity="Person" syncable="YES"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="memory" inverseEntity="Photo" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="memories" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="Occasion" representedClassName="Occasion" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="occasion" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="isSelected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -33,5 +43,7 @@
         <element name="Person" positionX="-45" positionY="0" width="128" height="120"/>
         <element name="Photo" positionX="448" positionY="-162" width="128" height="73"/>
         <element name="Tag" positionX="495" positionY="-54" width="128" height="73"/>
+        <element name="Event" positionX="-281" positionY="189" width="128" height="103"/>
+        <element name="Occasion" positionX="-47" positionY="249" width="128" height="73"/>
     </elements>
 </model>
