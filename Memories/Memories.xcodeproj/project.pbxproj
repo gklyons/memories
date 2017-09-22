@@ -36,6 +36,7 @@
 		D463481E1F75763800B17A01 /* EventVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D463481D1F75763800B17A01 /* EventVC.storyboard */; };
 		D46348201F75AF0A00B17A01 /* Occasion+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D463481F1F75AF0A00B17A01 /* Occasion+Convenience.swift */; };
 		D46348221F75B0F000B17A01 /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348211F75B0F000B17A01 /* Event+Convenience.swift */; };
+		D46348241F75B72700B17A01 /* OccasionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348231F75B72700B17A01 /* OccasionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		D463481D1F75763800B17A01 /* EventVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventVC.storyboard; sourceTree = "<group>"; };
 		D463481F1F75AF0A00B17A01 /* Occasion+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Occasion+Convenience.swift"; sourceTree = "<group>"; };
 		D46348211F75B0F000B17A01 /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
+		D46348231F75B72700B17A01 /* OccasionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				63E2B6881F705BB600B1DC23 /* PersonController.swift */,
+				D46348231F75B72700B17A01 /* OccasionController.swift */,
 				63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */,
 				63E2B6951F706EF000B1DC23 /* TagController.swift */,
 				63E2B6971F706EF800B1DC23 /* PhotoController.swift */,
@@ -389,6 +392,7 @@
 				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
 				63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */,
 				63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */,
+				D46348241F75B72700B17A01 /* OccasionController.swift in Sources */,
 				D46348221F75B0F000B17A01 /* Event+Convenience.swift in Sources */,
 				637F67161F71964F0007CC73 /* TagButton.swift in Sources */,
 				63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */,
