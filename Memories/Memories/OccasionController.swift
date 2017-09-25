@@ -28,6 +28,11 @@ class OccasionController {
         saveToPersistentStore()
     }
     
+    func deleteOccasion(title: String) {
+        let _ = Occasion(title: title)
+        saveToPersistentStore()
+    }
+    
     // MARK - Persitence
     
     func saveToPersistentStore() {

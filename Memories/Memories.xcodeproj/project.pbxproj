@@ -38,6 +38,8 @@
 		D46348221F75B0F000B17A01 /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348211F75B0F000B17A01 /* Event+Convenience.swift */; };
 		D46348241F75B72700B17A01 /* OccasionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348231F75B72700B17A01 /* OccasionController.swift */; };
 		D46348261F75BEE400B17A01 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348251F75BEE400B17A01 /* EventController.swift */; };
+		D46348281F75C6F200B17A01 /* OccasionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */; };
+		D4ECD8091F79B3EC00D8B5CE /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		D46348211F75B0F000B17A01 /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		D46348231F75B72700B17A01 /* OccasionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionController.swift; sourceTree = "<group>"; };
 		D46348251F75BEE400B17A01 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionTableViewController.swift; sourceTree = "<group>"; };
+		D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 		63E2B67A1F705ACE00B1DC23 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */,
+				D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */,
 				637F670D1F7179B10007CC73 /* PeopleTabViewController.swift */,
 				637F670F1F7182C40007CC73 /* PersonViewController.swift */,
 				637F67131F71918E0007CC73 /* MemoryViewController.swift */,
@@ -383,6 +389,7 @@
 				637F67101F7182C40007CC73 /* PersonViewController.swift in Sources */,
 				63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */,
 				63E2B6941F706AB700B1DC23 /* Photo+Convenience.swift in Sources */,
+				D46348281F75C6F200B17A01 /* OccasionTableViewController.swift in Sources */,
 				633BE0D81F72E40F003D2A56 /* NewGroupViewController.swift in Sources */,
 				63C3892B1F73148600FDF9FF /* GroupController.swift in Sources */,
 				637F670E1F7179B10007CC73 /* PeopleTabViewController.swift in Sources */,
@@ -392,6 +399,7 @@
 				63C3892D1F7314C200FDF9FF /* Group+Convenience.swift in Sources */,
 				63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */,
 				D46348261F75BEE400B17A01 /* EventController.swift in Sources */,
+				D4ECD8091F79B3EC00D8B5CE /* EventTableViewController.swift in Sources */,
 				63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */,
 				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
 				63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */,

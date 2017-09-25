@@ -14,4 +14,7 @@ extension Occasion {
         self.init(context: context)
         self.title = title
     }
+    
+    @NSManaged public var events: NSOrderedSet?
+    
 }
