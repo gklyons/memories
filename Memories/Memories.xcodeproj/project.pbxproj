@@ -17,6 +17,7 @@
 		637F67161F71964F0007CC73 /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F67151F71964F0007CC73 /* TagButton.swift */; };
 		63C3892B1F73148600FDF9FF /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3892A1F73148600FDF9FF /* GroupController.swift */; };
 		63C3892D1F7314C200FDF9FF /* Group+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3892C1F7314C200FDF9FF /* Group+Convenience.swift */; };
+		63D3CE0A1F795B9200794F2B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3CE091F795B9200794F2B /* ProfileTableViewCell.swift */; };
 		63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */; };
 		63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */; };
 		63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2B6881F705BB600B1DC23 /* PersonController.swift */; };
@@ -69,6 +70,7 @@
 		637F67151F71964F0007CC73 /* TagButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		63C3892A1F73148600FDF9FF /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		63C3892C1F7314C200FDF9FF /* Group+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+Convenience.swift"; sourceTree = "<group>"; };
+		63D3CE091F795B9200794F2B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		63E2B6841F705BA600B1DC23 /* Person+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+Convenience.swift"; sourceTree = "<group>"; };
 		63E2B6861F705BB000B1DC23 /* Memory+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Memory+Convenience.swift"; sourceTree = "<group>"; };
 		63E2B6881F705BB600B1DC23 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				D463481D1F75763800B17A01 /* EventVC.storyboard */,
 				633BE0D91F72EA8C003D2A56 /* SelectPersonTableViewCell.swift */,
 				637F67151F71964F0007CC73 /* TagButton.swift */,
+				63D3CE091F795B9200794F2B /* ProfileTableViewCell.swift */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				D4ECD8091F79B3EC00D8B5CE /* EventTableViewController.swift in Sources */,
 				63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */,
 				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
+				63D3CE0A1F795B9200794F2B /* ProfileTableViewCell.swift in Sources */,
 				63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */,
 				63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */,
 				D46348241F75B72700B17A01 /* OccasionController.swift in Sources */,

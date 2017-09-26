@@ -14,6 +14,7 @@ class MemoryViewController: UIViewController {
     
     var buttonArray: [TagButton] = []
     var person: Person?
+    var memory: Memory?
     
     // MARK: - IBOutlets
     
@@ -71,6 +72,11 @@ class MemoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if memory != nil {
+            memoryTitleTextField.text = memory?.title
+            memoryInfoTextView.text = memory?.memoryInfo
+        }
     }
     
     func tagButtonWasTapped(tappedButton: TagButton) -> [TagButton] {

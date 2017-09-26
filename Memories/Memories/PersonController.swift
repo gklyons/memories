@@ -31,6 +31,13 @@ class PersonController {
         saveToPersistentStore()
     }
     
+    func updatePerson(person: Person) {
+        if let moc = person.managedObjectContext {
+            try! moc.save()
+        }
+        saveToPersistentStore()
+    }
+    
     func deletePerson(person: Person) {
         if let moc = person.managedObjectContext {
             moc.delete(person)

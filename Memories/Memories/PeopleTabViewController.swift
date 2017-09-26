@@ -1,4 +1,4 @@
-    //
+//
 //  PeopleTabViewController.swift
 //  Memories
 //
@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class PeopleTabViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var peopleListTableView: UITableView!
@@ -62,4 +63,6 @@ class PeopleTabViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
 }
+    
+
     
