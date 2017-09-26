@@ -13,6 +13,7 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Properties
     
     var chosenPeople: [Person] = []
+    var group: Group?
     
     // MARK: - IBOutlets
     
@@ -38,6 +39,10 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if group != nil {
+            groupNameTextField.text = group?.name
+        }
+        
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
     }
@@ -51,9 +56,21 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") as? SelectPersonTableViewCell else { return UITableViewCell() }
         cell.delegate = self
+        
         let person = PersonController.shared.people[indexPath.row]
         
-        cell.nameLabel.text = person.name
+        if group != nil {
+            guard let group = group,
+                let people = group.people else { return UITableViewCell() }
+            
+            let peopleArray = Array(people) as! [Person]
+        
+            if peopleArray.contains(person) {
+                cell.nameLabel.text = person.name
+            }
+        } else {
+            cell.nameLabel.text = person.name
+        }
         
         return cell
     }

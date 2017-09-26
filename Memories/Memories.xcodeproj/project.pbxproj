@@ -157,14 +157,14 @@
 		63E2B67A1F705ACE00B1DC23 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D4ECD80A1F7AB4C700D8B5CE /* EventMemoryViewController.swift */,
-				D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */,
-				D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */,
 				637F670D1F7179B10007CC73 /* PeopleTabViewController.swift */,
 				637F670F1F7182C40007CC73 /* PersonViewController.swift */,
 				637F67131F71918E0007CC73 /* MemoryViewController.swift */,
 				633BE0D51F72E3E6003D2A56 /* GroupViewController.swift */,
 				633BE0D71F72E40F003D2A56 /* NewGroupViewController.swift */,
+				D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */,
+				D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */,
+				D4ECD80A1F7AB4C700D8B5CE /* EventMemoryViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
