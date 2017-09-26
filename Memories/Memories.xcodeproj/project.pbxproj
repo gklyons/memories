@@ -34,6 +34,12 @@
 		D427238D1F70245D00700EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */; };
 		D42723981F70245E00700EC7 /* MemoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42723971F70245E00700EC7 /* MemoriesTests.swift */; };
 		D42723A31F70245E00700EC7 /* MemoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42723A21F70245E00700EC7 /* MemoriesUITests.swift */; };
+		D463481E1F75763800B17A01 /* EventVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D463481D1F75763800B17A01 /* EventVC.storyboard */; };
+		D46348201F75AF0A00B17A01 /* Occasion+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D463481F1F75AF0A00B17A01 /* Occasion+Convenience.swift */; };
+		D46348241F75B72700B17A01 /* OccasionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348231F75B72700B17A01 /* OccasionController.swift */; };
+		D46348281F75C6F200B17A01 /* OccasionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */; };
+		D4ECD8091F79B3EC00D8B5CE /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */; };
+		D4ECD80B1F7AB4C700D8B5CE /* EventMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ECD80A1F7AB4C700D8B5CE /* EventMemoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +93,12 @@
 		D427239E1F70245E00700EC7 /* MemoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42723A21F70245E00700EC7 /* MemoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUITests.swift; sourceTree = "<group>"; };
 		D42723A41F70245E00700EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D463481D1F75763800B17A01 /* EventVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventVC.storyboard; sourceTree = "<group>"; };
+		D463481F1F75AF0A00B17A01 /* Occasion+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Occasion+Convenience.swift"; sourceTree = "<group>"; };
+		D46348231F75B72700B17A01 /* OccasionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionController.swift; sourceTree = "<group>"; };
+		D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccasionTableViewController.swift; sourceTree = "<group>"; };
+		D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		D4ECD80A1F7AB4C700D8B5CE /* EventMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMemoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,7 @@
 				63E2B6911F706AAF00B1DC23 /* Tag+Convenience.swift */,
 				63E2B6931F706AB700B1DC23 /* Photo+Convenience.swift */,
 				63C3892C1F7314C200FDF9FF /* Group+Convenience.swift */,
+				D463481F1F75AF0A00B17A01 /* Occasion+Convenience.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -132,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				63E2B6881F705BB600B1DC23 /* PersonController.swift */,
+				D46348231F75B72700B17A01 /* OccasionController.swift */,
 				63E2B68A1F705BBF00B1DC23 /* MemoryController.swift */,
 				63E2B6951F706EF000B1DC23 /* TagController.swift */,
 				63E2B6971F706EF800B1DC23 /* PhotoController.swift */,
@@ -143,6 +157,9 @@
 		63E2B67A1F705ACE00B1DC23 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D4ECD80A1F7AB4C700D8B5CE /* EventMemoryViewController.swift */,
+				D46348271F75C6F200B17A01 /* OccasionTableViewController.swift */,
+				D4ECD8081F79B3EC00D8B5CE /* EventTableViewController.swift */,
 				637F670D1F7179B10007CC73 /* PeopleTabViewController.swift */,
 				637F670F1F7182C40007CC73 /* PersonViewController.swift */,
 				637F67131F71918E0007CC73 /* MemoryViewController.swift */,
@@ -158,6 +175,7 @@
 				D42723861F70245D00700EC7 /* Main.storyboard */,
 				D427238B1F70245D00700EC7 /* LaunchScreen.storyboard */,
 				633BE0D31F72E37E003D2A56 /* GroupVC.storyboard */,
+				D463481D1F75763800B17A01 /* EventVC.storyboard */,
 				633BE0D91F72EA8C003D2A56 /* SelectPersonTableViewCell.swift */,
 				637F67151F71964F0007CC73 /* TagButton.swift */,
 				63D3CE091F795B9200794F2B /* ProfileTableViewCell.swift */,
@@ -293,7 +311,7 @@
 				TargetAttributes = {
 					D427237E1F70245D00700EC7 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6PU3T4WS7W;
+						DevelopmentTeam = H3N9XPK38Q;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -339,6 +357,7 @@
 				D427238D1F70245D00700EC7 /* LaunchScreen.storyboard in Resources */,
 				D427238A1F70245D00700EC7 /* Assets.xcassets in Resources */,
 				D42723881F70245D00700EC7 /* Main.storyboard in Resources */,
+				D463481E1F75763800B17A01 /* EventVC.storyboard in Resources */,
 				633BE0D41F72E37E003D2A56 /* GroupVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,18 +389,23 @@
 				637F67101F7182C40007CC73 /* PersonViewController.swift in Sources */,
 				63E2B6871F705BB000B1DC23 /* Memory+Convenience.swift in Sources */,
 				63E2B6941F706AB700B1DC23 /* Photo+Convenience.swift in Sources */,
+				D46348281F75C6F200B17A01 /* OccasionTableViewController.swift in Sources */,
 				633BE0D81F72E40F003D2A56 /* NewGroupViewController.swift in Sources */,
 				63C3892B1F73148600FDF9FF /* GroupController.swift in Sources */,
 				637F670E1F7179B10007CC73 /* PeopleTabViewController.swift in Sources */,
 				633BE0DA1F72EA8C003D2A56 /* SelectPersonTableViewCell.swift in Sources */,
 				D42723831F70245D00700EC7 /* AppDelegate.swift in Sources */,
+				D46348201F75AF0A00B17A01 /* Occasion+Convenience.swift in Sources */,
 				63C3892D1F7314C200FDF9FF /* Group+Convenience.swift in Sources */,
 				63E2B68B1F705BBF00B1DC23 /* MemoryController.swift in Sources */,
+				D4ECD8091F79B3EC00D8B5CE /* EventTableViewController.swift in Sources */,
 				63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */,
 				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
 				63D3CE0A1F795B9200794F2B /* ProfileTableViewCell.swift in Sources */,
 				63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */,
 				63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */,
+				D46348241F75B72700B17A01 /* OccasionController.swift in Sources */,
+				D4ECD80B1F7AB4C700D8B5CE /* EventMemoryViewController.swift in Sources */,
 				637F67161F71964F0007CC73 /* TagButton.swift in Sources */,
 				63E2B6851F705BA600B1DC23 /* Person+Convenience.swift in Sources */,
 				63E2B68E1F705C9E00B1DC23 /* MemoriesCoreData.xcdatamodeld in Sources */,
@@ -548,7 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6PU3T4WS7W;
+				DEVELOPMENT_TEAM = H3N9XPK38Q;
 				INFOPLIST_FILE = Memories/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.calebstrong.memories;
@@ -562,7 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6PU3T4WS7W;
+				DEVELOPMENT_TEAM = H3N9XPK38Q;
 				INFOPLIST_FILE = Memories/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.calebstrong.memories;
