@@ -11,22 +11,23 @@ import UIKit
 class OccasionTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
-    // MARK - Outlets
-    
-    @IBOutlet weak var occasionTextField: UITextField!
-    
+
     // MARK - Actions
-    
-    @IBAction func addButtonTapped(_ sender: Any) {
+
+@IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let occasionTitle = occasionTextField.text, !occasionTitle.isEmpty else { return }
         OccasionController.shared.createOccasion(title: occasionTitle)
         occasionTextField.text = ""
         tableView.reloadData()
     }
+    
+    // MARK - Outlets
+    @IBOutlet weak var occasionTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,31 +44,33 @@ class OccasionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "occasionCell", for: indexPath)
         
         let occasion = OccasionController.shared.occasion[indexPath.row]
-        cell.detailTextLabel?.text = occasion.title
+        cell.textLabel?.text = occasion.title
         
-        if occasion.events?.count == 1 {
+        guard let events = occasion.memories else { return cell }
+        
+        if events.count == 1 {
             cell.detailTextLabel?.text = "1 Item"
         } else {
-            let eventCount = occasion.events?.count ?? 0
+            let eventCount = events.count
             cell.detailTextLabel?.text = "\(eventCount) Items"
         }
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Occasions"
-    }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Occasions"
+//    }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            _ = OccasionController.shared.occasion[indexPath.row]
-            OccasionController.shared.deleteOccasion(title: title!)
+            let occasion = OccasionController.shared.occasion[indexPath.row]
+            OccasionController.shared.deleteOccasion(occasion: occasion)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     // MARK: - Navigation
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEventList",
             let indexPath = tableView.indexPathForSelectedRow {

@@ -28,8 +28,9 @@ class OccasionController {
         saveToPersistentStore()
     }
     
-    func deleteOccasion(title: String) {
-        let _ = Occasion(title: title)
+    func deleteOccasion(occasion: Occasion) {
+        let moc = occasion.managedObjectContext
+        moc?.delete(occasion)
         saveToPersistentStore()
     }
     

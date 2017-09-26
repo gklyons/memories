@@ -32,7 +32,7 @@ class MemoryViewController: UIViewController {
             let info = memoryInfoTextView.text, !info.isEmpty,
             let person = person else { return }
         let people = NSSet(array: [person])
-        MemoryController.createMemory(title: title, memoryInfo: info, people: people)
+        MemoryController.createMemoryFromPerson(title: title, memoryInfo: info, people: people)
         
 //        var tag: String
 //        for button in buttonArray {
