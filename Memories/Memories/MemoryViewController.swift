@@ -51,12 +51,8 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
             let info = textView.text, !info.isEmpty,
             let person = person else { return }
         let people = NSSet(array: [person])
-<<<<<<< HEAD
         MemoryController.createMemoryFromPerson(title: title, memoryInfo: info, people: people)
-=======
-        MemoryController.createMemory(title: title, memoryInfo: info, people: people)
         guard let photo = memoryPhotoImageView.image else { return }
->>>>>>> developLogan
         
 //        var tag: String
 //        for button in buttonArray {
@@ -96,7 +92,7 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         
         if memory != nil {
             memoryTitleTextField.text = memory?.title
-            memoryInfoTextView.text = memory?.memoryInfo
+            textView.text = memory?.memoryInfo
         }
     }
     
