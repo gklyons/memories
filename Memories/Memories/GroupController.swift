@@ -28,8 +28,12 @@ class GroupController {
         PersonController.shared.saveToPersistentStore()
     }
     
-    func updateGroup() {
+    func updateGroup(group: Group) {
+        if let moc = group.managedObjectContext {
+            try! moc.save()
+        }
         
+        PersonController.shared.saveToPersistentStore()
     }
     
     func deleteGroup(group: Group) {
