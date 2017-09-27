@@ -125,10 +125,12 @@
             </objects>
             <point key="canvasLocation" x="1417" y="234"/>
         </scene>
-        <!--View Controller-->
+
+        <!--Title-->
         <scene sceneID="wlD-lE-qZ8">
             <objects>
-                <viewController id="eE9-SW-y9T" sceneMemberID="viewController">
+                <viewController id="eE9-SW-y9T" customClass="EventMemoryViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" contentMode="scaleToFill" id="rDY-Ax-8oi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,6 +154,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwV-IC-jN8">
+                                <rect key="frame" x="65" y="413" width="245" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="addpic"/>
+                                <connections>
+                                    <action selector="imageButtonTapped:" destination="eE9-SW-y9T" eventType="touchUpInside" id="9XU-bF-TEi"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-xE-NHR">
                                 <rect key="frame" x="16" y="413" width="343" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,10 +178,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rj5-GO-GVY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="A5J-PA-USl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tgf-SJ-y1q">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="eE9-SW-y9T" id="e2g-fw-Stn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eventMemoryImageView" destination="L5f-xE-NHR" id="R8Y-f0-fTq"/>
+                        <outlet property="memoryTextView" destination="xl2-37-bMb" id="aYy-cM-lwE"/>
+                        <outlet property="titleTextField" destination="fq2-Qa-tpg" id="TYs-HZ-tKy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCz-bx-ukJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2325.5999999999999" y="235.23238380809596"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addpic" width="1022" height="921"/>
+    </resources>
 </document>
