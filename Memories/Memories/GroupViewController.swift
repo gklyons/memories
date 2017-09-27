@@ -10,11 +10,20 @@ import UIKit
 
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: - Properties
+    
+    var buttonTag: Int?
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var groupTableView: UITableView!
     
     // MARK: - IBActions
+    
+    @objc func groupNameButtonTapped(_ sender: UIButton) {
+        buttonTag = sender.tag
+        performSegue(withIdentifier: "toNewGroupVC", sender: self)
+    }
     
     @objc func deleteButtonTapped(_ sender: UIButton) {
         let section = sender.tag
@@ -39,13 +48,8 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         return GroupController.shared.groups.count
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        let group = GroupController.shared.groups[section]
-//        return group.name
-//    }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
+        return 50
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -55,6 +59,8 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         let headerButton = UIButton(type: .roundedRect)
         headerButton.setTitle(group.name, for: .normal)
         headerButton.setTitleColor(.black, for: .normal)
+        headerButton.tag = section
+        headerButton.addTarget(self, action: #selector(GroupViewController.groupNameButtonTapped(_:)), for: .touchUpInside)
         
         let deleteButton = UIButton(type: .roundedRect)
         deleteButton.setTitle("-", for: .normal)
@@ -62,10 +68,12 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         deleteButton.setTitleColor(.black, for: .normal)
         deleteButton.tag = section
         deleteButton.addTarget(self, action: #selector(GroupViewController.deleteButtonTapped(_:)), for: .touchUpInside)
+        deleteButton.layer.cornerRadius = 10
+        deleteButton.frame.size = CGSize(width: 50, height: 50)
         
         let horizontalStackView = UIStackView(arrangedSubviews: [headerButton, deleteButton])
         horizontalStackView.spacing = 8
-        horizontalStackView.distribution = .fillProportionally
+        horizontalStackView.distribution = .fill
         
         return horizontalStackView
     }
@@ -90,17 +98,27 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let group = GroupController.shared.groups[indexPath.section - 1]
-//            GroupController.shared.deleteGroup(group: group)
-//            let indexSet = IndexSet(arrayLiteral: indexPath.section)
-//            groupTableView.deleteSections(indexSet, with: .automatic)
-//        }
-//    }
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNewGroupVC" {
+            guard let buttonTag = buttonTag else { return }
+            let group = GroupController.shared.groups[buttonTag]
+            let newGroupVC = segue.destination as? NewGroupViewController
+            newGroupVC?.group = group
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

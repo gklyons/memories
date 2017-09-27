@@ -46,6 +46,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="groupTableView" destination="6cO-tu-M9a" id="gW5-pZ-Bgc"/>
+                        <segue destination="vSF-Xu-bO1" kind="show" identifier="toNewGroupVC" id="yq9-CU-dgZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovz-uK-a0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,4 +169,7 @@
     <resources>
         <image name="incomplete" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yq9-CU-dgZ"/>
+    </inferredMetricsTieBreakers>
 </document>
