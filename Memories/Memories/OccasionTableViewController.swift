@@ -15,10 +15,9 @@ class OccasionTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-
     // MARK - Actions
-
-@IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+    
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let occasionTitle = occasionTextField.text, !occasionTitle.isEmpty else { return }
         OccasionController.shared.createOccasion(title: occasionTitle)
         occasionTextField.text = ""
@@ -27,7 +26,6 @@ class OccasionTableViewController: UITableViewController {
     
     // MARK - Outlets
     @IBOutlet weak var occasionTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +55,9 @@ class OccasionTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Occasions"
-//    }
+    //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //        return "Occasions"
+    //    }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -70,9 +68,9 @@ class OccasionTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEventList",
+        if segue.identifier == "toEvents",
             let indexPath = tableView.indexPathForSelectedRow {
             let occasion = OccasionController.shared.occasion[indexPath.row]
             let eventVC = segue.destination as? EventTableViewController
@@ -80,13 +78,3 @@ class OccasionTableViewController: UITableViewController {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
