@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -217,29 +218,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Memory Title here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHE-ou-3sQ">
-                                <rect key="frame" x="8" y="72" width="359" height="30"/>
+                                <rect key="frame" x="6" y="72" width="361" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your memory here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-Kt-AIW">
-                                <rect key="frame" x="8" y="110" width="359" height="166"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="166" id="JiS-Bb-g55"/>
-                                </constraints>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-Kt-AIW">
+                                <rect key="frame" x="8" y="134.5" width="359" height="144"/>
+                                <color key="backgroundColor" red="0.91949555839999997" green="0.91949555839999997" blue="0.91949555839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-SX-tSP">
-                                <rect key="frame" x="8" y="284" width="359" height="204.5"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4m-Iq-hma">
-                                <rect key="frame" x="8" y="284" width="359" height="205"/>
                                 <connections>
-                                    <action selector="selectMemoryPhotoButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="c7U-6a-NSh"/>
+                                    <outlet property="delegate" destination="U9k-a8-uos" id="Ff8-Co-16h"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G13-1r-YNh">
+                                <rect key="frame" x="92" y="303" width="192" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="G13-1r-YNh" secondAttribute="height" multiplier="192:169" id="VQI-KD-26U"/>
+                                </constraints>
+                                <state key="normal" image="addpic"/>
+                                <connections>
+                                    <action selector="memoryButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="6Td-cY-GUR"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-SX-tSP">
+                                <rect key="frame" x="8" y="286" width="359" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5sb-SX-tSP" secondAttribute="height" multiplier="16:9" id="bRK-sk-Fxb"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your desired tags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzn-j3-gvw">
                                 <rect key="frame" x="8" y="496.5" width="359" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -301,41 +309,50 @@
                                     <action selector="saveButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="Wzz-TG-V3h"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter memory text below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-Fk-My2">
+                                <rect key="frame" x="9" y="110" width="358" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sHE-ou-3sQ" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="Csm-hV-fWk"/>
-                            <constraint firstItem="hzn-j3-gvw" firstAttribute="top" secondItem="d4m-Iq-hma" secondAttribute="bottom" constant="8" id="DRF-6X-obK"/>
+                            <constraint firstItem="HnC-Fk-My2" firstAttribute="top" secondItem="sHE-ou-3sQ" secondAttribute="bottom" constant="8" id="5nw-PW-cDL"/>
+                            <constraint firstItem="23Q-Kt-AIW" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="CIx-6C-zAc"/>
+                            <constraint firstItem="sHE-ou-3sQ" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="6" id="Csm-hV-fWk"/>
+                            <constraint firstItem="23Q-Kt-AIW" firstAttribute="top" secondItem="HnC-Fk-My2" secondAttribute="bottom" constant="8" id="ELO-2q-IEc"/>
                             <constraint firstItem="sHE-ou-3sQ" firstAttribute="top" secondItem="TZY-qC-SfO" secondAttribute="bottom" constant="8" id="Flo-9N-bxf"/>
                             <constraint firstAttribute="trailing" secondItem="5sb-SX-tSP" secondAttribute="trailing" constant="8" id="G2g-07-Ql7"/>
                             <constraint firstAttribute="trailing" secondItem="Lqz-BX-Mx2" secondAttribute="trailing" constant="8" id="Icp-Nu-8Sn"/>
                             <constraint firstItem="5sb-SX-tSP" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="JSQ-MB-nRr"/>
-                            <constraint firstItem="d4m-Iq-hma" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="MuU-mC-mrr"/>
-                            <constraint firstItem="23Q-Kt-AIW" firstAttribute="top" secondItem="sHE-ou-3sQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Mzg-Rj-SUl"/>
+                            <constraint firstAttribute="trailing" secondItem="HnC-Fk-My2" secondAttribute="trailing" constant="8" id="MV4-IN-8fL"/>
+                            <constraint firstItem="G13-1r-YNh" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="92" id="Oo2-US-ZGT"/>
                             <constraint firstItem="Lqz-BX-Mx2" firstAttribute="top" secondItem="hzn-j3-gvw" secondAttribute="bottom" constant="8" id="Oz3-xd-UVF"/>
-                            <constraint firstItem="d4m-Iq-hma" firstAttribute="top" secondItem="23Q-Kt-AIW" secondAttribute="bottom" constant="8" id="Q17-n0-bd4"/>
                             <constraint firstItem="Lqz-BX-Mx2" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="SeP-bd-qJQ"/>
+                            <constraint firstItem="hzn-j3-gvw" firstAttribute="top" secondItem="G13-1r-YNh" secondAttribute="bottom" constant="24.5" id="Uu2-SP-kdS"/>
+                            <constraint firstItem="5sb-SX-tSP" firstAttribute="top" secondItem="23Q-Kt-AIW" secondAttribute="bottom" constant="8" id="WjV-dr-16u"/>
                             <constraint firstItem="cdd-NG-WOY" firstAttribute="top" secondItem="hzn-j3-gvw" secondAttribute="bottom" constant="101" id="X4A-Aa-D82"/>
+                            <constraint firstAttribute="trailing" secondItem="23Q-Kt-AIW" secondAttribute="trailing" constant="8" id="YWX-rD-JQI"/>
                             <constraint firstItem="f5E-i7-Rqx" firstAttribute="centerX" secondItem="nJB-8U-Zp7" secondAttribute="centerX" id="Zjr-6d-5Sf"/>
+                            <constraint firstItem="HnC-Fk-My2" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="9" id="aYn-bz-oDv"/>
                             <constraint firstAttribute="trailing" secondItem="sHE-ou-3sQ" secondAttribute="trailing" constant="8" id="dJx-2d-hcx"/>
                             <constraint firstAttribute="trailing" secondItem="hzn-j3-gvw" secondAttribute="trailing" constant="8" id="drm-Zq-htj"/>
+                            <constraint firstItem="G13-1r-YNh" firstAttribute="top" secondItem="23Q-Kt-AIW" secondAttribute="bottom" constant="24.5" id="eC6-Uk-WcC"/>
                             <constraint firstItem="hzn-j3-gvw" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="eNR-Ce-rR1"/>
-                            <constraint firstItem="5sb-SX-tSP" firstAttribute="top" secondItem="23Q-Kt-AIW" secondAttribute="bottom" constant="8" id="gfM-NI-YAh"/>
-                            <constraint firstItem="23Q-Kt-AIW" firstAttribute="trailing" secondItem="sHE-ou-3sQ" secondAttribute="trailing" id="gqf-hA-NVm"/>
-                            <constraint firstAttribute="trailing" secondItem="d4m-Iq-hma" secondAttribute="trailing" constant="8" id="qhp-7c-f5K"/>
+                            <constraint firstAttribute="trailing" secondItem="G13-1r-YNh" secondAttribute="trailing" constant="91" id="laj-xH-eMp"/>
                             <constraint firstItem="hzn-j3-gvw" firstAttribute="top" secondItem="5sb-SX-tSP" secondAttribute="bottom" constant="8" id="syb-pJ-83M"/>
                             <constraint firstItem="f5E-i7-Rqx" firstAttribute="top" secondItem="Lqz-BX-Mx2" secondAttribute="bottom" constant="8" id="vb1-Gs-6ZQ"/>
-                            <constraint firstItem="23Q-Kt-AIW" firstAttribute="leading" secondItem="sHE-ou-3sQ" secondAttribute="leading" id="wtt-R5-T3J"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="funnyButton" destination="u4b-fX-sIz" id="xS7-a9-xdq"/>
                         <outlet property="happyButton" destination="emM-3p-Mow" id="1CV-Cr-eb0"/>
-                        <outlet property="memoryInfoTextView" destination="23Q-Kt-AIW" id="zc9-pS-Zx6"/>
                         <outlet property="memoryPhotoImageView" destination="5sb-SX-tSP" id="aRf-bq-qA9"/>
                         <outlet property="memoryTitleTextField" destination="sHE-ou-3sQ" id="hhA-0q-vB5"/>
                         <outlet property="sadButton" destination="tPm-HR-qgD" id="L1w-O7-CNl"/>
                         <outlet property="seriousButton" destination="XJ1-1s-X77" id="cuX-mv-Yre"/>
+                        <outlet property="textView" destination="23Q-Kt-AIW" id="qFJ-TW-ceW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRV-pG-6Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -399,6 +416,9 @@
             <point key="canvasLocation" x="240.80000000000001" y="178.56071964017991"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addpic" width="1022" height="921"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u57-6w-cLA"/>
     </inferredMetricsTieBreakers>

@@ -14,7 +14,6 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     var imagePicker = UIImagePickerController()
     var person: Person?
-
     
     // MARK: - IBOutlets
     
@@ -23,6 +22,8 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet weak var memoryListTableView: UITableView!
     
     // MARK: - IBActions
+    
+    
     
     @IBAction func personPhotoButtonTapped(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
