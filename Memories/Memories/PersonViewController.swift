@@ -28,6 +28,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @objc func newMemoryButtonTapped() {
         self.performSegue(withIdentifier: "ToMemoryVC", sender: self)
     }
+
     @IBAction func personPhotoButtonTapped(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
             print("Button capture")

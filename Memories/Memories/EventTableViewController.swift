@@ -10,19 +10,21 @@ import UIKit
 
 class EventTableViewController: UITableViewController {
 
+
     // MARK - Properties
     
     var occasion: Occasion?
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
          self.tableView.reloadData()
     }
+
     
     // MARK: - Table view data source
     

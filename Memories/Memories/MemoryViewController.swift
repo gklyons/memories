@@ -53,7 +53,7 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
             let person = person else { return }
         let people = NSSet(array: [person])
         guard let photo = memoryPhotoImageView.image else { return }
-        
+
         for button in buttonArray {
             if button.isEnabled == false {
                 self.tagString = button.titleLabel!.text!
@@ -104,6 +104,7 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         if memory != nil {
             memoryTitleTextField.text = memory?.title
             textView.text = memory?.memoryInfo
+
             guard let photos = memory?.photos else { return }
             let photosArray = Array(photos) as! [Photo]
             guard let photoData = photosArray[0].photo else { return }
