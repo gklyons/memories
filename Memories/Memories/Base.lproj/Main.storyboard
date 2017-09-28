@@ -269,7 +269,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lqz-BX-Mx2">
                                 <rect key="frame" x="8" y="525" width="359" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emM-3p-Mow">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emM-3p-Mow" customClass="TagButton" customModule="Memories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="50"/>
                                         <color key="backgroundColor" red="0.077131919559999998" green="0.53040421010000005" blue="0.71900260449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Happy">
@@ -279,7 +279,7 @@
                                             <action selector="happyButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="V6p-le-Lso"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPm-HR-qgD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPm-HR-qgD" customClass="TagButton" customModule="Memories" customModuleProvider="target">
                                         <rect key="frame" x="92" y="0.0" width="83.5" height="50"/>
                                         <color key="backgroundColor" red="0.077131919559999998" green="0.53040421010000005" blue="0.71900260449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Sad">
@@ -289,7 +289,7 @@
                                             <action selector="sadButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="b3Y-b5-qNY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4b-fX-sIz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4b-fX-sIz" customClass="TagButton" customModule="Memories" customModuleProvider="target">
                                         <rect key="frame" x="183.5" y="0.0" width="84" height="50"/>
                                         <color key="backgroundColor" red="0.077131919559999998" green="0.53040421010000005" blue="0.71900260449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Funny">
@@ -299,7 +299,7 @@
                                             <action selector="funnyButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="NzY-dA-Z3U"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ1-1s-X77">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJ1-1s-X77" customClass="TagButton" customModule="Memories" customModuleProvider="target">
                                         <rect key="frame" x="275.5" y="0.0" width="83.5" height="50"/>
                                         <color key="backgroundColor" red="0.077131919559999998" green="0.53040421010000005" blue="0.71900260449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Serious">

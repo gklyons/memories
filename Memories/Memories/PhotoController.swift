@@ -19,6 +19,14 @@ class PhotoController {
         PersonController.shared.saveToPersistentStore()
     }
     
+    static func updatePhoto(photo: Photo){
+        if let moc = photo.managedObjectContext {
+            try! moc.save()
+        }
+        
+        PersonController.shared.saveToPersistentStore()
+    }
+    
     static func deletePhoto(photo: Photo) {
         if let moc = photo.managedObjectContext {
             moc.delete(photo)

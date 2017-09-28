@@ -13,13 +13,25 @@ class MemoryController {
     
     // MARK: - CRUD Functions
     
-    static func createMemoryFromPerson(title: String, memoryInfo: String, people: NSSet) {
-        let _ = Memory(title: title, memoryInfo: memoryInfo, people: people, occasion: nil)
+    static func createMemoryFromPerson(title: String, memoryInfo: String, people: NSSet, photo: UIImage, tag: String) {
+        let memory = Memory(title: title, memoryInfo: memoryInfo, people: people, occasion: nil)
+        PhotoController.createPhoto(photo: photo, memory: memory)
+        TagController.createTag(tag: tag, memory: memory)
         PersonController.shared.saveToPersistentStore()
     }
     
     static func createMemoryFromOccasion(title: String, memoryInfo: String, occasion: Occasion) {
         let _ = Memory(title: title, memoryInfo: memoryInfo, people: nil, occasion: occasion)
+        PersonController.shared.saveToPersistentStore()
+    }
+    
+    static func updateMemory(memory: Memory, photo: Photo, tag: Tag) {
+        PhotoController.updatePhoto(photo: photo)
+        TagController.updateTag(tag: tag)
+        if let moc = memory.managedObjectContext {
+            try! moc.save()
+        }
+        
         PersonController.shared.saveToPersistentStore()
     }
     
