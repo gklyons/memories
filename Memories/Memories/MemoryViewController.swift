@@ -15,9 +15,11 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     var buttonArray: [TagButton] = []
     var person: Person?
     var memory: Memory?
+    var tag: Tag?
+    var photo: Photo?
+    var tagString: String?
     
     // MARK: - IBOutlets
-    
   
     @IBOutlet weak var memoryTitleTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -28,7 +30,6 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     @IBOutlet weak var seriousButton: TagButton!
     
     // MARK: - IBActions
-    
     
     @IBAction func memoryButtonTapped(_ sender: Any) {
     
@@ -45,27 +46,35 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         }
     }
     
-    
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
         guard let title = memoryTitleTextField.text, !title.isEmpty,
             let info = textView.text, !info.isEmpty,
             let person = person else { return }
         let people = NSSet(array: [person])
-        
-        MemoryController.createMemoryFromPerson(title: title, memoryInfo: info, people: people)
         guard let photo = memoryPhotoImageView.image else { return }
-
         
-//        var tag: String
-//        for button in buttonArray {
-//            if button.isEnabled == false {
-//                tag = button.titleLabel!.text!
-//                TagController.createTag(tag: tag, memory: memory)
-//            }
-//        }
-//        let tags = NSSet(array: [tag])
-//        let memory = Memory(title: title, memoryInfo: info, timestamp: Date(), people: people)
-//
+        for button in buttonArray {
+            if button.isEnabled == false {
+                self.tagString = button.titleLabel!.text!
+            }
+        }
+        
+        guard let tagString = tagString else { return }
+        
+        if memory == nil {
+            MemoryController.createMemoryFromPerson(title: title, memoryInfo: info, people: people, photo: photo, tag: tagString)
+        } else {
+            guard let memory = memory else { return }
+            memory.title = title
+            memory.memoryInfo = info
+            let photoData = UIImageJPEGRepresentation(photo, 1.0)
+            self.photo?.photo = photoData
+            guard let photo = self.photo,
+                let tag = self.tag else { return }
+            tag.tag = tagString
+            MemoryController.updateMemory(memory: memory, photo: photo, tag: tag)
+        }
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -95,6 +104,20 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         if memory != nil {
             memoryTitleTextField.text = memory?.title
             textView.text = memory?.memoryInfo
+            guard let photos = memory?.photos else { return }
+            let photosArray = Array(photos) as! [Photo]
+            guard let photoData = photosArray[0].photo else { return }
+            memoryPhotoImageView.image = UIImage(data: photoData)
+            self.photo = photosArray[0]
+            
+            let buttonArray: [TagButton] = [happyButton, sadButton, funnyButton, seriousButton]
+            for button in buttonArray {
+                if button.titleLabel?.text == memory?.tags?.tag {
+                    button.isEnabled = false
+                    self.tag = memory?.tags
+                    self.tagString = memory?.tags?.tag
+                }
+            }
         }
     }
     
@@ -104,6 +127,7 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
             textView.resignFirstResponder()
             return false
         }
+        
         return true
     }
     
@@ -116,14 +140,15 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     func tagButtonWasTapped(tappedButton: TagButton) -> [TagButton] {
         let buttonArray: [TagButton] = [happyButton, sadButton, funnyButton, seriousButton]
         for button in buttonArray {
-            if button == tappedButton {
+            if button != tappedButton {
+                button.isEnabled = true
+            } else {
                 button.isEnabled = false
             }
         }
         
         return buttonArray
     }
-    
     
     // MARK: - Navigation
 

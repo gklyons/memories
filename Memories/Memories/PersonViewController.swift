@@ -38,7 +38,6 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
             
             self.present(imagePicker, animated:  true, completion: nil)
         }
-
     }
     
     override func viewDidLoad() {

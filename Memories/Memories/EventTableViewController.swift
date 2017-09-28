@@ -10,7 +10,6 @@ import UIKit
 
 class EventTableViewController: UITableViewController {
 
-    
     // MARK - Properties
     
     var occasion: Occasion?
@@ -76,4 +75,3 @@ class EventTableViewController: UITableViewController {
         }
     }
 }
-

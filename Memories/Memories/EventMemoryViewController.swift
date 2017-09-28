@@ -39,10 +39,6 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
         //            self.photo?.photo = photoData
         //            guard self.photo != nil else { return }
         
-        
-        
-        
-        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -83,12 +79,10 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         eventMemoryImageView.image = selectedImage
         dismiss(animated: true, completion: nil)
-        
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
-    
 }
