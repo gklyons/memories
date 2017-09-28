@@ -35,13 +35,13 @@ class OccasionTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return OccasionController.shared.occasion.count
+        return OccasionController.shared.occasions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "occasionCell", for: indexPath)
         
-        let occasion = OccasionController.shared.occasion[indexPath.row]
+        let occasion = OccasionController.shared.occasions[indexPath.row]
         cell.textLabel?.text = occasion.title
         
         guard let events = occasion.memories else { return cell }
@@ -61,7 +61,7 @@ class OccasionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let occasion = OccasionController.shared.occasion[indexPath.row]
+            let occasion = OccasionController.shared.occasions[indexPath.row]
             OccasionController.shared.deleteOccasion(occasion: occasion)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -70,9 +70,9 @@ class OccasionTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEvents",
-            let indexPath = tableView.indexPathForSelectedRow {
-            let occasion = OccasionController.shared.occasion[indexPath.row]
+        if segue.identifier == "toEvents" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let occasion = OccasionController.shared.occasions[indexPath.row]
             let eventVC = segue.destination as? EventTableViewController
             eventVC?.occasion = occasion
         }

@@ -15,6 +15,7 @@ extension Occasion {
         self.title = title
     }
     
+    @NSManaged public var photo: Data?
     @NSManaged public var events: NSOrderedSet?
     
 }

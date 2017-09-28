@@ -8,12 +8,13 @@
 
 import UIKit
 
-class EventMemoryViewController: UIViewController, UIImagePickerControllerDelegate {
+class EventMemoryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK - Properties
     
     var occasion: Occasion?
     var memory: Memory?
+    var photo: Photo?
     
     // MARK - Outlets
     
@@ -25,11 +26,23 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard let title = titleTextField.text, !title.isEmpty,
-            let memory = memoryTextView.text, !memory.isEmpty else { return }
-        guard let occasion = self.occasion else { return }
-
-        MemoryController.createMemoryFromOccasion(title: title, memoryInfo: memory, occasion: occasion)
-
+            let memoryInfo = memoryTextView.text, !memoryInfo.isEmpty,
+            let photo = eventMemoryImageView.image,
+            let occasion = occasion else { return }
+        
+        if memory == nil {
+            MemoryController.createMemoryFromOccasion(title: title, memoryInfo: memoryInfo, photo: photo, occasion: occasion)
+        }
+        //            let occasion = occasion
+        //            occasion.title = title
+        //            let photoData = UIImageJPEGRepresentation(photo, 1)
+        //            self.photo?.photo = photoData
+        //            guard self.photo != nil else { return }
+        
+        
+        
+        
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -37,11 +50,16 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         if memory != nil  {
             guard let memory = memory else { return }
             titleTextField.text = memory.title
             memoryTextView.text = memory.memoryInfo
+            
+            guard let photos = memory.photos else { return }
+            let photosArray = Array(photos) as! [Photo]
+            guard let photoData = photosArray[0].photo else { return }
+            let photo = UIImage(data: photoData)
+            eventMemoryImageView.image = photo
         }
     }
     
@@ -49,24 +67,22 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
         
         let imagePicker = UIImagePickerController()
         
-        
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
             print("Button Captured")
             
-            imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
             
             present(imagePicker, animated:  true, completion: nil)
         }
         
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-            let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            eventMemoryImageView.image = selectedImage
-            dismiss(animated: true, completion: nil)
-            
-        }
-        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        eventMemoryImageView.image = selectedImage
+        dismiss(animated: true, completion: nil)
         
     }
     
@@ -74,5 +90,5 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
-
+    
 }

@@ -16,7 +16,7 @@ class OccasionController {
     
     // MARK - Properties
     
-    var occasion: [Occasion] {
+    var occasions: [Occasion] {
         let request: NSFetchRequest<Occasion> = Occasion.fetchRequest()
         return (try? CoreDataStack.context.fetch(request)) ?? []
     }
@@ -26,6 +26,13 @@ class OccasionController {
     func createOccasion(title: String) {
         let _ = Occasion(title: title)
         saveToPersistentStore()
+    }
+    
+    func updateOccasion(occasion: Occasion) {
+        if let moc = occasion.managedObjectContext {
+            try! moc.save()
+            saveToPersistentStore()
+        }
     }
     
     func deleteOccasion(occasion: Occasion) {

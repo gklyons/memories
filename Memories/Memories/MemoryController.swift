@@ -18,10 +18,12 @@ class MemoryController {
         PersonController.shared.saveToPersistentStore()
     }
     
-    static func createMemoryFromOccasion(title: String, memoryInfo: String, occasion: Occasion) {
-        let _ = Memory(title: title, memoryInfo: memoryInfo, people: nil, occasion: occasion)
+    static func createMemoryFromOccasion(title: String, memoryInfo: String, photo: UIImage, occasion: Occasion) {
+        let memory = Memory(title: title, memoryInfo: memoryInfo, people: nil, occasion: occasion)
+        PhotoController.createPhoto(photo: photo, memory: memory)
         PersonController.shared.saveToPersistentStore()
     }
+    
     
     static func deleteMemory(memory: Memory) {
         if let moc = memory.managedObjectContext {

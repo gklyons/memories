@@ -13,7 +13,7 @@ class EventTableViewController: UITableViewController {
     
     // MARK - Properties
     
-    var occasion = Occasion()
+    var occasion: Occasion?
 
     
     override func viewDidLoad() {
@@ -21,16 +21,20 @@ class EventTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         self.tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return OccasionController.shared.occasion.count
+        return occasion?.memories?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell")!
         
-        guard let memories = occasion.memories else { return UITableViewCell() }
+        guard let memories = occasion?.memories else { return UITableViewCell() }
         if memories.count == 0 {
             return UITableViewCell()
         } else {
@@ -38,7 +42,7 @@ class EventTableViewController: UITableViewController {
             guard let memory = memoriesArray[indexPath.row] as? Memory else { return UITableViewCell() }
             
             cell.textLabel?.text = memory.title
-            cell.detailTextLabel?.text = "\(String(describing: memory.timestamp))"
+            cell.detailTextLabel?.text = "\(memory.timestamp)"
             
             return cell
         }
@@ -57,10 +61,18 @@ class EventTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEventDetail" {
-//            guard let occasion = self.occasion
-//            let eventMemoryVC = segue.destination as? EventMemoryViewController
-//            eventMemoryVC?.occasion = occasion
-            
+            let occasion = self.occasion
+            let eventMemoryVC = segue.destination as? EventMemoryViewController
+            eventMemoryVC?.occasion = occasion
+        } else {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let occasion = self.occasion,
+                let memories = occasion.memories else { return }
+            let memoryArray = Array(memories)
+            guard let memory = memoryArray[indexPath.row] as? Memory else { return }
+            let memoryVC = segue.destination as? EventMemoryViewController
+            memoryVC?.occasion = occasion
+            memoryVC?.memory = memory
         }
     }
 }
