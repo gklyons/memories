@@ -15,10 +15,8 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     var imagePicker = UIImagePickerController()
     var person: Person?
-<<<<<<< HEAD
+
     var image: UIImage?
-=======
->>>>>>> developLogan
     
     // MARK: - IBOutlets
     
@@ -26,10 +24,10 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     // MARK: - IBActions
     
-<<<<<<< HEAD
+
     @objc func newMemoryButtonTapped() {
         self.performSegue(withIdentifier: "ToMemoryVC", sender: self)
-=======
+    }
     
     
     @IBAction func personPhotoButtonTapped(_ sender: Any) {
@@ -42,7 +40,6 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
             
             self.present(imagePicker, animated:  true, completion: nil)
         }
->>>>>>> developLogan
     }
     
     override func viewDidLoad() {

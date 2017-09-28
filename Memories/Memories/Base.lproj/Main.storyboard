@@ -245,11 +245,12 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G13-1r-YNh">
-                                <rect key="frame" x="92" y="303" width="192" height="169"/>
+                                <rect key="frame" x="92" y="292" width="192" height="192"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="G13-1r-YNh" secondAttribute="height" multiplier="192:169" id="VQI-KD-26U"/>
+                                    <constraint firstAttribute="height" constant="192" id="OPC-4F-Veo"/>
+                                    <constraint firstAttribute="width" constant="192" id="yrp-jn-nZY"/>
                                 </constraints>
-                                <state key="normal" image="addpic"/>
+                                <state key="normal" image="addnew"/>
                                 <connections>
                                     <action selector="memoryButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="6Td-cY-GUR"/>
                                 </connections>
@@ -342,7 +343,7 @@
                             <constraint firstItem="G13-1r-YNh" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="92" id="Oo2-US-ZGT"/>
                             <constraint firstItem="Lqz-BX-Mx2" firstAttribute="top" secondItem="hzn-j3-gvw" secondAttribute="bottom" constant="8" id="Oz3-xd-UVF"/>
                             <constraint firstItem="Lqz-BX-Mx2" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="SeP-bd-qJQ"/>
-                            <constraint firstItem="hzn-j3-gvw" firstAttribute="top" secondItem="G13-1r-YNh" secondAttribute="bottom" constant="24.5" id="Uu2-SP-kdS"/>
+                            <constraint firstItem="hzn-j3-gvw" firstAttribute="top" secondItem="G13-1r-YNh" secondAttribute="bottom" constant="12.5" id="Uu2-SP-kdS"/>
                             <constraint firstItem="5sb-SX-tSP" firstAttribute="top" secondItem="23Q-Kt-AIW" secondAttribute="bottom" constant="8" id="WjV-dr-16u"/>
                             <constraint firstItem="cdd-NG-WOY" firstAttribute="top" secondItem="hzn-j3-gvw" secondAttribute="bottom" constant="101" id="X4A-Aa-D82"/>
                             <constraint firstAttribute="trailing" secondItem="23Q-Kt-AIW" secondAttribute="trailing" constant="8" id="YWX-rD-JQI"/>
@@ -350,7 +351,7 @@
                             <constraint firstItem="HnC-Fk-My2" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="9" id="aYn-bz-oDv"/>
                             <constraint firstAttribute="trailing" secondItem="sHE-ou-3sQ" secondAttribute="trailing" constant="8" id="dJx-2d-hcx"/>
                             <constraint firstAttribute="trailing" secondItem="hzn-j3-gvw" secondAttribute="trailing" constant="8" id="drm-Zq-htj"/>
-                            <constraint firstItem="G13-1r-YNh" firstAttribute="top" secondItem="23Q-Kt-AIW" secondAttribute="bottom" constant="24.5" id="eC6-Uk-WcC"/>
+                            <constraint firstItem="G13-1r-YNh" firstAttribute="top" secondItem="23Q-Kt-AIW" secondAttribute="bottom" constant="13.5" id="eC6-Uk-WcC"/>
                             <constraint firstItem="hzn-j3-gvw" firstAttribute="leading" secondItem="nJB-8U-Zp7" secondAttribute="leading" constant="8" id="eNR-Ce-rR1"/>
                             <constraint firstAttribute="trailing" secondItem="G13-1r-YNh" secondAttribute="trailing" constant="91" id="laj-xH-eMp"/>
                             <constraint firstItem="hzn-j3-gvw" firstAttribute="top" secondItem="5sb-SX-tSP" secondAttribute="bottom" constant="8" id="syb-pJ-83M"/>
@@ -478,7 +479,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addpic" width="1022" height="921"/>
+        <image name="addnew" width="1007" height="1009"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Naf-nN-aDz"/>
