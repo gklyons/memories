@@ -102,7 +102,17 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addpic" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-4D-RWC">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlQ-JX-bnj">
+                                                    <rect key="frame" x="87" y="46" width="200" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="LJm-FU-toq"/>
+                                                        <constraint firstAttribute="height" constant="200" id="ypt-em-pAO"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="selectImageButtonTapped:" destination="R1L-kw-NH3" eventType="touchUpInside" id="NyF-hh-dqV"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addnew" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-4D-RWC">
                                                     <rect key="frame" x="87.5" y="46" width="200" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="f2Y-gM-bfA"/>
@@ -114,16 +124,6 @@
                                                     <state key="normal" title="Save"/>
                                                     <connections>
                                                         <action selector="saveButtonTapped:" destination="R1L-kw-NH3" eventType="touchUpInside" id="pcF-IT-yWL"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlQ-JX-bnj">
-                                                    <rect key="frame" x="87" y="46" width="200" height="200"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="LJm-FU-toq"/>
-                                                        <constraint firstAttribute="height" constant="200" id="ypt-em-pAO"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <action selector="selectImageButtonTapped:" destination="R1L-kw-NH3" eventType="touchUpInside" id="NyF-hh-dqV"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -230,7 +230,7 @@
                                     <action selector="memoryButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="6Td-cY-GUR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addpic" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-SX-tSP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-SX-tSP">
                                 <rect key="frame" x="8" y="286" width="359" height="202"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your desired tags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzn-j3-gvw">
@@ -433,7 +433,6 @@
     </scenes>
     <resources>
         <image name="addnew" width="1007" height="1009"/>
-        <image name="addpic" width="1022" height="921"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Naf-nN-aDz"/>

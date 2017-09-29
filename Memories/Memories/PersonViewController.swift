@@ -146,6 +146,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
                 } else {
                     cell.profilePictureImageView.image = image
                 }
+
             }
             
             return cell
