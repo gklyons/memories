@@ -18,9 +18,18 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
 
     var image: UIImage?
 
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .short
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var memoryListTableView: UITableView!
+    
     
     // MARK: - IBActions
     
@@ -115,7 +124,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
                 guard let memory = memoriesArray[indexPath.row] as? Memory else { return UITableViewCell() }
                 
                 cell?.textLabel?.text = memory.title
-                cell?.detailTextLabel?.text = "\(String(describing: memory.timestamp))"
+                cell?.detailTextLabel?.text = dateFormatter.string(from: memory.timestamp!)
                 
                 return cell ?? UITableViewCell()
             }
@@ -132,7 +141,11 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
                 let image = UIImage(data: photoData)
                 cell.profilePictureImageView.image = image
             } else {
-                cell.profilePictureImageView.image = #imageLiteral(resourceName: "addpic")
+                if image == nil {
+                    cell.profilePictureImageView.image = #imageLiteral(resourceName: "addpic")
+                } else {
+                    cell.profilePictureImageView.image = image
+                }
             }
             
             return cell
@@ -153,7 +166,8 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     func saveButtonTapped(name: String, photo: UIImage) {
         if self.person == nil {
-            PersonController.shared.createPerson(name: name, photo: photo)
+            guard let image = image else { return }
+            PersonController.shared.createPerson(name: name, photo: image)
         } else {
             guard let person = person else { return }
             person.name = name

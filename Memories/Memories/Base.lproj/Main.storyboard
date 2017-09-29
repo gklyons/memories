@@ -76,7 +76,7 @@
         <!--Person View Controller-->
         <scene sceneID="HhR-hk-zuv">
             <objects>
-                <viewController id="ak1-yN-keV" customClass="PersonViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonViewController" id="ak1-yN-keV" customClass="PersonViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sDv-Lf-ahY"/>
                         <viewControllerLayoutGuide type="bottom" id="cWs-uV-pv6"/>

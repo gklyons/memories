@@ -14,6 +14,14 @@ class EventTableViewController: UITableViewController {
     // MARK - Properties
     
     var occasion: Occasion?
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .short
+        formatter.doesRelativeDateFormatting = true
+        return formatter
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +51,7 @@ class EventTableViewController: UITableViewController {
             guard let memory = memoriesArray[indexPath.row] as? Memory else { return UITableViewCell() }
             
             cell.textLabel?.text = memory.title
-            cell.detailTextLabel?.text = "\(memory.timestamp)"
+            cell.detailTextLabel?.text = dateFormatter.string(from: memory.timestamp!)
             
             return cell
         }
@@ -51,10 +59,11 @@ class EventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            //            let event = EventController.shared.event[indexPath.row]
-            //            EventController.deleteEvent(event: event)
-            //            tableView.deleteRows(at: [indexPath], with: .fade)
+            guard let memories = occasion?.memories,
+                let memoriesArray = Array(memories) as? [Memory] else { return }
+            let memory = memoriesArray[indexPath.row]
+            MemoryController.deleteMemory(memory: memory)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     

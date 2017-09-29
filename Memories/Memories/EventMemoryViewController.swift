@@ -33,12 +33,7 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
         if memory == nil {
             MemoryController.createMemoryFromOccasion(title: title, memoryInfo: memoryInfo, photo: photo, occasion: occasion)
         }
-        //            let occasion = occasion
-        //            occasion.title = title
-        //            let photoData = UIImageJPEGRepresentation(photo, 1)
-        //            self.photo?.photo = photoData
-        //            guard self.photo != nil else { return }
-        
+    
         self.navigationController?.popViewController(animated: true)
     }
     

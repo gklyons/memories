@@ -45,6 +45,10 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if group != nil {
             groupNameTextField.text = group?.name
+        } else {
+            for person in people {
+                person.isSelected = false
+            }
         }
         
         peopleTableView.delegate = self
@@ -54,7 +58,11 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: Table View Data Source Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people.count
+        if group == nil {
+            return people.count
+        } else {
+            return group?.people?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,27 +70,38 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.delegate = self
         
-        let person = people[indexPath.row]
         
         if group != nil {
             guard let group = group,
                 let people = group.people else { return UITableViewCell() }
             
             let peopleArray = Array(people) as! [Person]
-        
-            if peopleArray.contains(person) {
-                cell.nameLabel.text = person.name
-                cell.isSelectedButton.setBackgroundImage(#imageLiteral(resourceName: "complete"), for: .normal)
-                person.isSelected = true
-                chosenPeople.append(person)
-            } else {
-                cell.nameLabel.text = person.name
-            }
+            
+            let person = peopleArray[indexPath.row]
+            cell.nameLabel?.text = person.name
+            cell.isSelectedButton.setBackgroundImage(#imageLiteral(resourceName: "complete"), for: .normal)
+            cell.isSelectedButton.isEnabled = false
+            
         } else {
+            
+            let person = people[indexPath.row]
             cell.nameLabel.text = person.name
         }
-
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let peopleSet = group?.people,
+            let peopleArray = Array(peopleSet) as? [Person] else { return }
+        let person = peopleArray[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "PersonViewController") as! PersonViewController
+        nextVC.person = person
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     // MARK: SelectServiceTableViewCellDelegate funcion
@@ -90,26 +109,6 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
     func personWasSelected(cell: SelectPersonTableViewCell) {
         
         guard let indexPath = peopleTableView.indexPath(for: cell) else { return }
-        
-//        var differenceInIndexPaths: Int?
-//        if indexPath.row == people.count && people.count != chosenPeople.count {
-//            differenceInIndexPaths = people.count - chosenPeople.count - 1
-//        } else {
-//            differenceInIndexPaths = people.count - chosenPeople.count
-//        }
-//
-//        var person: Person?
-//
-//        if cell.isSelectedButton.currentBackgroundImage == #imageLiteral(resourceName: "complete") {
-//            guard let differenceInIndexPaths = differenceInIndexPaths else { return }
-//            person = chosenPeople[indexPath.row - differenceInIndexPaths]
-//        } else {
-//            for person in people {
-//                person.isSelected = false
-//            }
-//
-//            person = people[indexPath.row]
-//        }
         
         let person = people[indexPath.row]
         let firstIndexPath = IndexPath(row: 0, section: 0)
