@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventMemoryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EventMemoryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate{
     
     // MARK - Properties
     
@@ -42,9 +42,27 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
         self.navigationController?.popViewController(animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textView(_ memoryTextView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "Enter memory here")
+        {
+            memoryTextView.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleTextField.delegate = self
+        memoryTextView.delegate = self
+        
         
         if memory != nil  {
             guard let memory = memory else { return }

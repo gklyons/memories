@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OccasionTableViewController: UITableViewController {
+class OccasionTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,9 +27,16 @@ class OccasionTableViewController: UITableViewController {
     // MARK - Outlets
     @IBOutlet weak var occasionTextField: UITextField!
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        occasionTextField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        occasionTextField.delegate = self
         
+
     }
     
     // MARK: - Table view data source
