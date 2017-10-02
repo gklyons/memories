@@ -24,8 +24,9 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK - Action
     
-    @IBAction func saveButtonTapped(_ sender: UIButton) {
-        guard let title = titleTextField.text, !title.isEmpty,
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+    guard let title = titleTextField.text, !title.isEmpty,
             let memoryInfo = memoryTextView.text, !memoryInfo.isEmpty,
             let photo = eventMemoryImageView.image,
             let occasion = occasion else { return }
@@ -35,6 +36,7 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
         }
     
         self.navigationController?.popViewController(animated: true)
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

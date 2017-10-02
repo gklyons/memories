@@ -122,16 +122,6 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         }
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "Enter memory here")
-        {
-            textView.resignFirstResponder()
-            return false
-        }
-        
-        return true
-    }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         memoryPhotoImageView.image = selectedImage
