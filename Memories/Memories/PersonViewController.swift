@@ -142,7 +142,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
                 cell.profilePictureImageView.image = image
             } else {
                 if image == nil {
-                    cell.profilePictureImageView.image = #imageLiteral(resourceName: "addpic")
+                    cell.profilePictureImageView.image = #imageLiteral(resourceName: "addnew")
                 } else {
                     cell.profilePictureImageView.image = image
                 }

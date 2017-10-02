@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -89,11 +90,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="R1L-kw-NH3" customClass="ProfileTableViewCell" customModule="Memories" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="260" id="R1L-kw-NH3" customClass="ProfileTableViewCell" customModule="Memories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R1L-kw-NH3" id="d7T-5i-89v">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="259.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter person's name here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWn-xt-Qsp">
@@ -120,7 +121,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c63-ui-dLI">
-                                                    <rect key="frame" x="333" y="261" width="34" height="30"/>
+                                                    <rect key="frame" x="333" y="216" width="34" height="30"/>
                                                     <state key="normal" title="Save"/>
                                                     <connections>
                                                         <action selector="saveButtonTapped:" destination="R1L-kw-NH3" eventType="touchUpInside" id="pcF-IT-yWL"/>
@@ -128,7 +129,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="c63-ui-dLI" secondAttribute="bottom" constant="8" id="HUD-O2-U5z"/>
+                                                <constraint firstAttribute="bottom" secondItem="c63-ui-dLI" secondAttribute="bottom" constant="13.5" id="HUD-O2-U5z"/>
                                                 <constraint firstItem="bpx-4D-RWC" firstAttribute="centerX" secondItem="d7T-5i-89v" secondAttribute="centerX" id="JDw-nS-TVs"/>
                                                 <constraint firstItem="KlQ-JX-bnj" firstAttribute="top" secondItem="VWn-xt-Qsp" secondAttribute="bottom" constant="8" id="Oa1-tt-Sxb"/>
                                                 <constraint firstAttribute="trailing" secondItem="VWn-xt-Qsp" secondAttribute="trailing" constant="8" id="Pa9-Wf-ZcC"/>
@@ -145,22 +146,22 @@
                                             <outlet property="profilePictureImageView" destination="bpx-4D-RWC" id="9M9-Zt-OSF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoryCell" textLabel="E0F-WS-Eyh" detailTextLabel="LC3-Kr-B9x" rowHeight="300" style="IBUITableViewCellStyleValue1" id="ujx-cd-J4d">
-                                        <rect key="frame" x="0.0" y="328" width="375" height="300"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoryCell" textLabel="E0F-WS-Eyh" detailTextLabel="LC3-Kr-B9x" rowHeight="340" style="IBUITableViewCellStyleValue1" id="ujx-cd-J4d">
+                                        <rect key="frame" x="0.0" y="288" width="375" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ujx-cd-J4d" id="v25-et-8gi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="339.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E0F-WS-Eyh">
-                                                    <rect key="frame" x="15" y="140" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="160" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LC3-Kr-B9x">
-                                                    <rect key="frame" x="316" y="140" width="44" height="20.5"/>
+                                                    <rect key="frame" x="316" y="160" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -223,14 +224,14 @@
                                 <rect key="frame" x="92" y="292" width="192" height="192"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="192" id="OPC-4F-Veo"/>
+                                    <constraint firstAttribute="width" secondItem="G13-1r-YNh" secondAttribute="height" multiplier="1:1" id="XS5-eN-hbW"/>
                                     <constraint firstAttribute="width" constant="192" id="yrp-jn-nZY"/>
                                 </constraints>
-                                <state key="normal" image="addnew"/>
                                 <connections>
                                     <action selector="memoryButtonTapped:" destination="U9k-a8-uos" eventType="touchUpInside" id="6Td-cY-GUR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-SX-tSP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addnew" translatesAutoresizingMaskIntoConstraints="NO" id="5sb-SX-tSP">
                                 <rect key="frame" x="8" y="286" width="359" height="202"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your desired tags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzn-j3-gvw">
@@ -367,7 +368,7 @@
         <scene sceneID="e0E-i9-AKu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHM-PD-4ay" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All people" id="sVN-tU-t3J"/>
+                    <tabBarItem key="tabBarItem" title="All people" image="personicon" landscapeImage="personicon" largeContentSizeImage="personicon" selectedImage="personicon" id="sVN-tU-t3J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Znj-np-k4a">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -386,7 +387,7 @@
         <scene sceneID="TdF-ls-CLa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUV-1T-vAz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Groups" id="4Pv-RI-YRD"/>
+                    <tabBarItem key="tabBarItem" title="Groups" image="groupicon" landscapeImage="groupicon" largeContentSizeImage="groupicon" selectedImage="groupicon" id="4Pv-RI-YRD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3uo-pb-HBb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -411,11 +412,11 @@
             </objects>
             <point key="canvasLocation" x="241" y="914"/>
         </scene>
-        <!--Event-->
+        <!--Events-->
         <scene sceneID="fUn-Oc-asx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FJ9-P6-Lla" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Event" id="gs6-5M-aM0"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="eventsicon" landscapeImage="eventsicon" largeContentSizeImage="eventsicon" selectedImage="eventsicon" id="gs6-5M-aM0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a1t-6y-GZ5">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -433,6 +434,9 @@
     </scenes>
     <resources>
         <image name="addnew" width="1007" height="1009"/>
+        <image name="eventsicon" width="28" height="28"/>
+        <image name="groupicon" width="36" height="36"/>
+        <image name="personicon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Naf-nN-aDz"/>
