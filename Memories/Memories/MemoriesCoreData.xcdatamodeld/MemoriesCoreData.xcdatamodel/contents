@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="isExpanded" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="people" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="groups" inverseEntity="Person" syncable="YES"/>
     </entity>
@@ -33,7 +34,7 @@
         <relationship name="memories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Memory" inverseName="tags" inverseEntity="Memory" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Group" positionX="-288" positionY="-9" width="128" height="75"/>
+        <element name="Group" positionX="-288" positionY="-9" width="128" height="90"/>
         <element name="Memory" positionX="250" positionY="32" width="128" height="150"/>
         <element name="Occasion" positionX="45" positionY="-90" width="128" height="73"/>
         <element name="Person" positionX="-45" positionY="0" width="128" height="120"/>

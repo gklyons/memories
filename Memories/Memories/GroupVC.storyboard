@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Group View Controller-->
+        <!--Groups-->
         <scene sceneID="lJa-a5-AWP">
             <objects>
                 <viewController id="pWF-AC-0MF" customClass="GroupViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6cO-tu-M9a">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="5cX-as-kwD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XCu-e8-oei">
+                    <navigationItem key="navigationItem" title="Groups" id="XCu-e8-oei">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Tyg-jc-9hV">
                             <connections>
                                 <segue destination="vSF-Xu-bO1" kind="show" id="eHC-6d-ueh"/>
@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovz-uK-a0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="-61"/>
+            <point key="canvasLocation" x="404" y="-61.619190404797607"/>
         </scene>
         <!--New Group View Controller-->
         <scene sceneID="D0b-e8-bR2">

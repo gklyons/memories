@@ -91,19 +91,6 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        guard let peopleSet = group?.people,
-            let peopleArray = Array(peopleSet) as? [Person] else { return }
-        let person = peopleArray[indexPath.row]
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "PersonViewController") as! PersonViewController
-        nextVC.person = person
-        navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
     // MARK: SelectServiceTableViewCellDelegate funcion
     
     func personWasSelected(cell: SelectPersonTableViewCell) {

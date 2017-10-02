@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6304BB411F829EF500B81D16 /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6304BB401F829EF500B81D16 /* ExpandableHeaderView.swift */; };
 		633BE0D41F72E37E003D2A56 /* GroupVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633BE0D31F72E37E003D2A56 /* GroupVC.storyboard */; };
 		633BE0D61F72E3E6003D2A56 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BE0D51F72E3E6003D2A56 /* GroupViewController.swift */; };
 		633BE0D81F72E40F003D2A56 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BE0D71F72E40F003D2A56 /* NewGroupViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6304BB401F829EF500B81D16 /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		633BE0D31F72E37E003D2A56 /* GroupVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupVC.storyboard; sourceTree = "<group>"; };
 		633BE0D51F72E3E6003D2A56 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		633BE0D71F72E40F003D2A56 /* NewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				633BE0D91F72EA8C003D2A56 /* SelectPersonTableViewCell.swift */,
 				637F67151F71964F0007CC73 /* TagButton.swift */,
 				63D3CE091F795B9200794F2B /* ProfileTableViewCell.swift */,
+				6304BB401F829EF500B81D16 /* ExpandableHeaderView.swift */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				63E2B6981F706EF800B1DC23 /* PhotoController.swift in Sources */,
 				63E2B6921F706AAF00B1DC23 /* Tag+Convenience.swift in Sources */,
 				63D3CE0A1F795B9200794F2B /* ProfileTableViewCell.swift in Sources */,
+				6304BB411F829EF500B81D16 /* ExpandableHeaderView.swift in Sources */,
 				63E2B6961F706EF000B1DC23 /* TagController.swift in Sources */,
 				63E2B6891F705BB600B1DC23 /* PersonController.swift in Sources */,
 				D46348241F75B72700B17A01 /* OccasionController.swift in Sources */,
