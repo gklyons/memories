@@ -24,7 +24,7 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK - Action
     
-    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         guard let title = titleTextField.text, !title.isEmpty,
             let memoryInfo = memoryTextView.text, !memoryInfo.isEmpty,
             let photo = eventMemoryImageView.image,
@@ -48,7 +48,7 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func textView(_ memoryTextView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "Enter memory here")
+        if (text == "\n")
         {
             memoryTextView.resignFirstResponder()
             return false

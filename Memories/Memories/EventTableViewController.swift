@@ -18,6 +18,7 @@ class EventTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = occasion?.title
     }
 
     
@@ -51,10 +52,11 @@ class EventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let event = OccasionController.shared.occasions[indexPath.row]
+            guard let occasion = occasion else { return }
+            OccasionController.shared.deleteOccasion(occasion: occasion)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             
-            //            let event = EventController.shared.event[indexPath.row]
-            //            EventController.deleteEvent(event: event)
-            //            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     

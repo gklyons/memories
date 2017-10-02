@@ -7,36 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
-class OccasionTableViewController: UITableViewController, UITextFieldDelegate {
+class OccasionTableViewController: UITableViewController, UITextFieldDelegate, NSFetchedResultsControllerDelegate {
+    
+    let fetchResultController: NSFetchedResultsController<Occasion> = {
+        let request: NSFetchRequest<Occasion> = Occasion.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        return NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         tableView.reloadData()
     }
     
     // MARK - Actions
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-        guard let occasionTitle = occasionTextField.text, !occasionTitle.isEmpty else { return }
-        OccasionController.shared.createOccasion(title: occasionTitle)
-        occasionTextField.text = ""
-        tableView.reloadData()
-    }
-    
-    // MARK - Outlets
-    @IBOutlet weak var occasionTextField: UITextField!
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        occasionTextField.resignFirstResponder()
-        return true
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        occasionTextField.delegate = self
-        
-
+        self.presentAddOccasionAlert()
     }
     
     // MARK: - Table view data source
@@ -59,6 +52,7 @@ class OccasionTableViewController: UITableViewController, UITextFieldDelegate {
             let eventCount = events.count
             cell.detailTextLabel?.text = "\(eventCount) Items"
         }
+        
         return cell
     }
     
@@ -73,6 +67,31 @@ class OccasionTableViewController: UITableViewController, UITextFieldDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    // MARK: - Alert
+    
+    func presentAddOccasionAlert() {
+        
+        var occasionTextField: UITextField?
+        let alertController = UIAlertController(title: "Create an occasion group. (example 'Christmas')", message: nil, preferredStyle: .alert)
+        alertController.addTextField{ (textField) in
+            textField.placeholder = "Enter title here."
+            occasionTextField = textField
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
+            guard let title = occasionTextField?.text, title != "" else { return }
+            OccasionController.shared.createOccasion(title: title)
+            self.tableView.reloadData()
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
     // MARK: - Navigation
     
