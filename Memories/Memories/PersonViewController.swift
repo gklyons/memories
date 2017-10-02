@@ -34,7 +34,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     // MARK: - IBActions
     
 
-    @objc func newMemoryButtonTapped() {
+    @objc func newMemoryButtonTapped(name: String, photo: UIImage) {
         self.performSegue(withIdentifier: "ToMemoryVC", sender: self)
     }
 
@@ -158,8 +158,17 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
             guard let memories = person?.memories else { return }
             let memoriesArray = Array(memories)
             guard let memory = memoriesArray[indexPath.row] as? Memory else { return }
-            MemoryController.deleteMemory(memory: memory)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let alert = UIAlertController(title: "Are you sure?", message: "You are going to delete \(memory.title ?? "this memory").", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let okayAction = UIAlertAction(title: "Okay", style: .default) { (uiAlertAction) in
+                MemoryController.deleteMemory(memory: memory)
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            }
+            
+            alert.addAction(cancelAction)
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
         }
     }
     

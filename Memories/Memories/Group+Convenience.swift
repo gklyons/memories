@@ -10,9 +10,10 @@ import Foundation
 import CoreData
 
 extension Group {
-    convenience init(name: String, people: NSSet, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(name: String, isExpanded: Bool = false, people: NSSet, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.name = name
+        self.isExpanded = isExpanded
         self.people = people
     }
 }

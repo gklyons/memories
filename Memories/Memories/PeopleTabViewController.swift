@@ -47,8 +47,16 @@ class PeopleTabViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let person = PersonController.shared.people[indexPath.row]
-            PersonController.shared.deletePerson(person: person)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let alert = UIAlertController(title: "Are you sure?", message: "You are going to delete \(person.name ?? "this person").", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let okayAction = UIAlertAction(title: "Okay", style: .default) { (uiAlertAction) in
+                PersonController.shared.deletePerson(person: person)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
+            alert.addAction(cancelAction)
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
         }
     }
 
