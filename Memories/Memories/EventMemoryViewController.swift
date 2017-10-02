@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventMemoryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EventMemoryViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate{
     
     // MARK - Properties
     
@@ -24,7 +24,7 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK - Action
     
-    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         guard let title = titleTextField.text, !title.isEmpty,
             let memoryInfo = memoryTextView.text, !memoryInfo.isEmpty,
             let photo = eventMemoryImageView.image,
@@ -37,9 +37,27 @@ class EventMemoryViewController: UIViewController, UIImagePickerControllerDelega
         self.navigationController?.popViewController(animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textView(_ memoryTextView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n")
+        {
+            memoryTextView.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleTextField.delegate = self
+        memoryTextView.delegate = self
+        
         
         if memory != nil  {
             guard let memory = memory else { return }
