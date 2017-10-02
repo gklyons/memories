@@ -314,7 +314,7 @@
 				TargetAttributes = {
 					D427237E1F70245D00700EC7 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = H3N9XPK38Q;
+						DevelopmentTeam = Q2K6WEEG8Z;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -576,7 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3N9XPK38Q;
+				DEVELOPMENT_TEAM = Q2K6WEEG8Z;
 				INFOPLIST_FILE = Memories/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glc.memories;
@@ -590,7 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3N9XPK38Q;
+				DEVELOPMENT_TEAM = Q2K6WEEG8Z;
 				INFOPLIST_FILE = Memories/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glc.memories;
