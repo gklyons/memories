@@ -73,7 +73,7 @@ class OccasionTableViewController: UITableViewController, UITextFieldDelegate, N
     func presentAddOccasionAlert() {
         
         var occasionTextField: UITextField?
-        let alertController = UIAlertController(title: "Create an occasion group. (example 'Christmas')", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Create an event. (example 'Christmas')", message: nil, preferredStyle: .alert)
         alertController.addTextField{ (textField) in
             textField.placeholder = "Enter title here."
             occasionTextField = textField

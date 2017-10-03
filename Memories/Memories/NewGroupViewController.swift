@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewGroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SelectPersonTableViewCellDelegate {
+class NewGroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SelectPersonTableViewCellDelegate, UITextFieldDelegate {
     
     // MARK: - Properties
     
@@ -53,6 +53,12 @@ class NewGroupViewController: UIViewController, UITableViewDataSource, UITableVi
         
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
+        groupNameTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     // MARK: Table View Data Source Functions
