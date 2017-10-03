@@ -62,6 +62,11 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     // MARK: - Memory List Table View Data Source Functions
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -134,6 +139,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ProfileTableViewCell else { return UITableViewCell() }
             
             cell.delegate = self
+            cell.nameTextField.delegate = self
             
             if person != nil {
                 cell.nameTextField.text = person?.name

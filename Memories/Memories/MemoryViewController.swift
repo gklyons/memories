@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // MARK: - Properties
     
@@ -101,6 +101,9 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        memoryTitleTextField.delegate = self
+        textView.delegate = self
+        
         if memory != nil {
             memoryTitleTextField.text = memory?.title
             textView.text = memory?.memoryInfo
@@ -120,6 +123,21 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
                 }
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textView(_ memoryTextView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n")
+        {
+            memoryTextView.resignFirstResponder()
+            return false
+        }
+        
+        return true
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
