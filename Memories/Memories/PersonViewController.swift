@@ -34,7 +34,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     // MARK: - IBActions
     
 
-    @objc func newMemoryButtonTapped(name: String, photo: UIImage) {
+    @objc func newMemoryButtonTapped() {
         self.performSegue(withIdentifier: "ToMemoryVC", sender: self)
     }
 
