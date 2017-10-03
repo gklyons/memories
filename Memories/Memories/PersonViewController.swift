@@ -15,9 +15,9 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     var imagePicker = UIImagePickerController()
     var person: Person?
-
+    
     var image: UIImage?
-
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
@@ -33,11 +33,11 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     // MARK: - IBActions
     
-
+    
     @objc func newMemoryButtonTapped() {
         self.performSegue(withIdentifier: "ToMemoryVC", sender: self)
     }
-
+    
     @IBAction func personPhotoButtonTapped(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
             print("Button capture")
@@ -152,7 +152,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
                 } else {
                     cell.profilePictureImageView.image = image
                 }
-
+                
             }
             
             return cell
@@ -160,20 +160,27 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            guard let memories = person?.memories else { return }
-            let memoriesArray = Array(memories)
-            guard let memory = memoriesArray[indexPath.row] as? Memory else { return }
-            let alert = UIAlertController(title: "Are you sure?", message: "You are going to delete \(memory.title ?? "this memory").", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let okayAction = UIAlertAction(title: "Okay", style: .default) { (uiAlertAction) in
-                MemoryController.deleteMemory(memory: memory)
-//                tableView.deleteRows(at: [indexPath], with: .fade)
-                tableView.reloadData()
+        if person?.memories?.count != 0 {
+            if editingStyle == .delete {
+                guard let memories = person?.memories else { return }
+                let memoriesArray = Array(memories)
+                guard let memory = memoriesArray[indexPath.row] as? Memory else { return }
+                let alert = UIAlertController(title: "Are you sure?", message: "You are going to delete \(memory.title ?? "this memory").", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                let okayAction = UIAlertAction(title: "Okay", style: .default) { (uiAlertAction) in
+                    MemoryController.deleteMemory(memory: memory)
+                    //                tableView.deleteRows(at: [indexPath], with: .fade)
+                    tableView.reloadData()
+                }
+                
+                alert.addAction(cancelAction)
+                alert.addAction(okayAction)
+                present(alert, animated: true, completion: nil)
             }
-            
+        } else {
+            let alert = UIAlertController(title: "Stop trying to break the app pls", message: nil, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alert.addAction(cancelAction)
-            alert.addAction(okayAction)
             present(alert, animated: true, completion: nil)
         }
     }
