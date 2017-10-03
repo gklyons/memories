@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="1104" y="178"/>
         </scene>
-        <!--People Tab View Controller-->
+        <!--People-->
         <scene sceneID="lGy-AO-06P">
             <objects>
                 <viewController id="sSQ-0q-mbe" customClass="PeopleTabViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                             <constraint firstItem="7wN-vl-Lrn" firstAttribute="top" secondItem="LYL-9y-x69" secondAttribute="bottom" id="qTW-Bw-xqZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zaT-Gd-x1o">
+                    <navigationItem key="navigationItem" title="People" id="zaT-Gd-x1o">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hoX-N7-JLb">
                             <connections>
                                 <segue destination="ak1-yN-keV" kind="show" id="xit-ec-EIG"/>
@@ -439,7 +439,7 @@
         <image name="personicon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Naf-nN-aDz"/>
+        <segue reference="1Pw-2c-MKQ"/>
         <segue reference="u57-6w-cLA"/>
     </inferredMetricsTieBreakers>
 </document>
