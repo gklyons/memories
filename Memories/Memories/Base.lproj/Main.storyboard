@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="235" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kEE-ks-We2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="260" id="R1L-kw-NH3" customClass="ProfileTableViewCell" customModule="Memories" customModuleProvider="target">
@@ -101,7 +101,7 @@
                                                     <rect key="frame" x="8" y="8" width="359" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlQ-JX-bnj">
                                                     <rect key="frame" x="87" y="46" width="200" height="200"/>
@@ -178,9 +178,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kEE-ks-We2" firstAttribute="top" secondItem="BLo-JD-t6V" secondAttribute="top" id="Gr9-ae-7GC"/>
                             <constraint firstItem="kEE-ks-We2" firstAttribute="leading" secondItem="BLo-JD-t6V" secondAttribute="leading" id="T2E-xi-PpN"/>
                             <constraint firstAttribute="trailing" secondItem="kEE-ks-We2" secondAttribute="trailing" id="hBC-bD-KWb"/>
-                            <constraint firstItem="kEE-ks-We2" firstAttribute="top" secondItem="sDv-Lf-ahY" secondAttribute="bottom" id="qYF-cU-asS"/>
                             <constraint firstAttribute="bottom" secondItem="kEE-ks-We2" secondAttribute="bottom" id="xdz-Qo-UEw"/>
                         </constraints>
                     </view>
@@ -209,7 +209,7 @@
                                 <rect key="frame" x="6" y="72" width="361" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-Kt-AIW">
                                 <rect key="frame" x="8" y="134.5" width="359" height="144"/>

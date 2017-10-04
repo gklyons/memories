@@ -76,6 +76,7 @@ class OccasionTableViewController: UITableViewController, UITextFieldDelegate, N
         let alertController = UIAlertController(title: "Create an event. (example 'Christmas')", message: nil, preferredStyle: .alert)
         alertController.addTextField{ (textField) in
             textField.placeholder = "Enter title here."
+            textField.autocapitalizationType = .words
             occasionTextField = textField
         }
         
