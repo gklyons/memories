@@ -112,12 +112,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuH-eE-23D">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuH-eE-23D">
+                                <rect key="frame" x="144" y="631" width="87" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="VGj-97-ibp"/>
+                                    <constraint firstAttribute="height" constant="31" id="VGj-97-ibp"/>
                                 </constraints>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save" image="greensave"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="vSF-Xu-bO1" eventType="touchUpInside" id="yRp-qU-5QL"/>
                                 </connections>
@@ -127,13 +127,13 @@
                         <constraints>
                             <constraint firstItem="Cyx-Zt-9Tc" firstAttribute="top" secondItem="4NN-oR-AVN" secondAttribute="top" constant="8" id="284-N5-FJm"/>
                             <constraint firstItem="4NN-oR-AVN" firstAttribute="trailing" secondItem="Cyx-Zt-9Tc" secondAttribute="trailing" constant="8" id="8YL-tR-v8M"/>
-                            <constraint firstItem="TuH-eE-23D" firstAttribute="top" secondItem="2sI-yG-TZZ" secondAttribute="bottom" id="8fU-dR-YR9"/>
-                            <constraint firstItem="TuH-eE-23D" firstAttribute="leading" secondItem="4NN-oR-AVN" secondAttribute="leading" id="EVH-0h-4d0"/>
+                            <constraint firstItem="TuH-eE-23D" firstAttribute="top" secondItem="2sI-yG-TZZ" secondAttribute="bottom" constant="8" id="8fU-dR-YR9"/>
+                            <constraint firstItem="TuH-eE-23D" firstAttribute="leading" secondItem="4NN-oR-AVN" secondAttribute="leading" constant="144" id="EVH-0h-4d0"/>
                             <constraint firstItem="2sI-yG-TZZ" firstAttribute="trailing" secondItem="4NN-oR-AVN" secondAttribute="trailing" id="IYK-Su-KAf"/>
-                            <constraint firstItem="4NN-oR-AVN" firstAttribute="trailing" secondItem="TuH-eE-23D" secondAttribute="trailing" id="QzQ-Di-TT0"/>
+                            <constraint firstItem="4NN-oR-AVN" firstAttribute="trailing" secondItem="TuH-eE-23D" secondAttribute="trailing" constant="144" id="QzQ-Di-TT0"/>
                             <constraint firstItem="2sI-yG-TZZ" firstAttribute="top" secondItem="Cyx-Zt-9Tc" secondAttribute="bottom" constant="8" id="UQd-SQ-AHL"/>
                             <constraint firstItem="2sI-yG-TZZ" firstAttribute="leading" secondItem="4NN-oR-AVN" secondAttribute="leading" id="WxC-g2-p9m"/>
-                            <constraint firstItem="TuH-eE-23D" firstAttribute="bottom" secondItem="4NN-oR-AVN" secondAttribute="bottom" id="quu-Gm-56Q"/>
+                            <constraint firstItem="TuH-eE-23D" firstAttribute="bottom" secondItem="4NN-oR-AVN" secondAttribute="bottom" constant="-5" id="quu-Gm-56Q"/>
                             <constraint firstItem="Cyx-Zt-9Tc" firstAttribute="leading" secondItem="4NN-oR-AVN" secondAttribute="leading" constant="8" id="y8W-I1-MWc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4NN-oR-AVN"/>
@@ -167,6 +167,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="greensave" width="743" height="257"/>
         <image name="incomplete" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>

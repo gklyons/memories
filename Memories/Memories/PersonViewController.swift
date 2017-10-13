@@ -85,9 +85,9 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         if section == 1 {
             let newMemoryButton = UIButton()
             newMemoryButton.setTitle("New Memory", for: .normal)
-            newMemoryButton.backgroundColor = .blue
             newMemoryButton.setTitleColor(.black, for: .normal)
             newMemoryButton.addTarget(self, action: #selector(PersonViewController.newMemoryButtonTapped), for: .touchUpInside)
+            newMemoryButton.setImage(#imageLiteral(resourceName: "ANM"), for: .normal)
             return newMemoryButton
         } else {
             return UIView()
