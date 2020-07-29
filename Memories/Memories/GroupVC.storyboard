@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZnB-B8-6Kd">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,14 +63,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonCell" id="HKP-9I-dzZ" customClass="SelectPersonTableViewCell" customModule="Memories" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HKP-9I-dzZ" id="gzp-we-nC2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-uu-gAe">
-                                                    <rect key="frame" x="337" y="4" width="30" height="30"/>
+                                                    <rect key="frame" x="337" y="3.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="7AJ-ov-ckk"/>
                                                         <constraint firstAttribute="height" constant="30" id="qRn-gG-6fb"/>
@@ -82,7 +81,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkq-pl-Hgc">
-                                                    <rect key="frame" x="8" y="8" width="321" height="21.5"/>
+                                                    <rect key="frame" x="8" y="8" width="321" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -144,11 +143,10 @@
             </objects>
             <point key="canvasLocation" x="1144.8" y="-62.518740629685162"/>
         </scene>
-        <!--groupNavController-->
+        <!--Group-->
         <scene sceneID="Be3-GF-6Sv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ne9-ol-0BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController title="groupNavController" automaticallyAdjustsScrollViewInsets="NO" id="ZnB-B8-6Kd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GroupNavController" automaticallyAdjustsScrollViewInsets="NO" id="ZnB-B8-6Kd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Group" image="groupicon" selectedImage="groupicon" id="f8d-IJ-ywQ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -161,6 +159,7 @@
                         <segue destination="pWF-AC-0MF" kind="relationship" relationship="rootViewController" id="UKq-B3-u32"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ne9-ol-0BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-450" y="-63"/>
         </scene>
