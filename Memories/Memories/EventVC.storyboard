@@ -61,10 +61,12 @@
             </objects>
             <point key="canvasLocation" x="562" y="233"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Event-->
         <scene sceneID="y0P-Qe-mfr">
             <objects>
                 <navigationController id="pMo-dq-lSW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Event" image="eventsicon" selectedImage="eventsicon" id="5PF-Kl-1dd"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1us-jj-t8n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -163,16 +165,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwV-IC-jN8">
-                                <rect key="frame" x="16" y="343" width="343" height="312"/>
+                                <rect key="frame" x="16" y="343" width="343" height="263"/>
                                 <connections>
                                     <action selector="imageButtonTapped:" destination="eE9-SW-y9T" eventType="touchUpInside" id="9XU-bF-TEi"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addnew" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-xE-NHR">
-                                <rect key="frame" x="70" y="363" width="235" height="235"/>
+                                <rect key="frame" x="70" y="363" width="235" height="186"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0H-gO-1VQ">
-                                <rect key="frame" x="143" y="617" width="89" height="38"/>
+                                <rect key="frame" x="143" y="568" width="89" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="1SW-1H-WO4"/>
                                 </constraints>
@@ -224,6 +226,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="addnew" width="1007" height="1009"/>
+        <image name="eventsicon" width="28" height="28"/>
         <image name="greensave" width="743" height="257"/>
     </resources>
 </document>
