@@ -188,17 +188,20 @@ extension GroupViewController: NSFetchedResultsControllerDelegate {
         switch type {
         case .delete:
             guard let indexPath = indexPath else { return }
-//            groupTableView.deleteRows(at: [indexPath], with: .automatic)
+            groupTableView.deleteRows(at: [indexPath], with: .automatic)
         case .insert:
             guard let newIndexPath = newIndexPath else { return }
-//            groupTableView.insertRows(at: [newIndexPath], with: .automatic)
+            groupTableView.insertRows(at: [newIndexPath], with: .automatic)
         case .move:
             guard let indexPath = indexPath,
                 let newIndexPath = newIndexPath else { return }
             groupTableView.moveRow(at: indexPath, to: newIndexPath)
         case .update:
             guard let indexPath = indexPath else { return }
-//            groupTableView.reloadRows(at: [indexPath], with: .automatic)
+            groupTableView.reloadRows(at: [indexPath], with: .automatic)
+        @unknown default:
+            break
+            //ADD SOMETHING HERE FOR THE DEFAULT CASE
         }
     }
 }

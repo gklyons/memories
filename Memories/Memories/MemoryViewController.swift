@@ -11,7 +11,6 @@ import UIKit
 class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // MARK: - Properties
-    
     var buttonArray: [TagButton] = []
     var person: Person?
     var memory: Memory?
@@ -20,7 +19,6 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     var tagString: String?
     
     // MARK: - IBOutlets
-  
     @IBOutlet weak var memoryTitleTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var memoryPhotoImageView: UIImageView!
@@ -30,7 +28,6 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     @IBOutlet weak var seriousButton: TagButton!
     
     // MARK: - IBActions
-    
     @IBAction func memoryButtonTapped(_ sender: Any) {
     
     let imagePicker = UIImagePickerController()
@@ -68,7 +65,7 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
             guard let memory = memory else { return }
             memory.title = title
             memory.memoryInfo = info
-            let photoData = UIImageJPEGRepresentation(photo, 1.0)
+            let photoData = photo.jpegData(compressionQuality: 1.0)
             self.photo?.photo = photoData
             guard let photo = self.photo,
                 let tag = self.tag else { return }
@@ -103,6 +100,11 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         
         memoryTitleTextField.delegate = self
         textView.delegate = self
+        self.textView.layer.borderColor = UIColor.officialApplePlaceholderGray.cgColor
+        self.textView.layer.borderWidth = 1
+        
+        textView.text = "Enter memory text here..."
+        textView.textColor = UIColor.officialApplePlaceholderGray
         
         if memory != nil {
             memoryTitleTextField.text = memory?.title
@@ -140,8 +142,25 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
         return true
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.officialApplePlaceholderGray {
+            textView.text = nil
+            textView.textColor = UIColor.officialApplePlaceholderGray
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Enter memory text here..."
+            textView.textColor = UIColor.officialApplePlaceholderGray
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
         memoryPhotoImageView.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
@@ -165,24 +184,18 @@ class MemoryViewController: UIViewController, UITextViewDelegate, UIImagePickerC
     }
  }
 
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
 
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+extension UIColor {
+    static var officialApplePlaceholderGray: UIColor {
+        return UIColor(red: 4, green: 4, blue: 30, alpha: 22)
+    }
+}

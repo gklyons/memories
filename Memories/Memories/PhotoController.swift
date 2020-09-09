@@ -14,7 +14,7 @@ class PhotoController {
     // MARK: - CRUD Functions
     
     static func createPhoto(photo: UIImage, memory: Memory) {
-        guard let photoData = UIImageJPEGRepresentation(photo, 1) as NSData? else { return }
+        guard let photoData = photo.jpegData(compressionQuality: 1) as NSData? else { return }
         let _ = Photo(photo: photoData, memory: memory)
         PersonController.shared.saveToPersistentStore()
     }

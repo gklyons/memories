@@ -159,7 +159,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if person?.memories?.count != 0 {
             if editingStyle == .delete {
                 guard let memories = person?.memories else { return }
@@ -194,7 +194,7 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         } else {
             guard let person = person else { return }
             person.name = name
-            guard let photoData = UIImageJPEGRepresentation(photo, 1) as NSData? else { return }
+            guard let photoData = photo.jpegData(compressionQuality: 1) as NSData? else { return }
             person.photo = photoData as Data
             PersonController.shared.updatePerson(person: person)
         }
@@ -214,13 +214,16 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
         
         if person == nil {
             image = selectedImage
         } else {
-            person?.photo = UIImageJPEGRepresentation(selectedImage, 1)
+            person?.photo = selectedImage.jpegData(compressionQuality: 1)
         }
         
         memoryListTableView.reloadData()
@@ -280,3 +283,13 @@ class PersonViewController: UIViewController, UITextFieldDelegate, UINavigationC
 
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

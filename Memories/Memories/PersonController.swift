@@ -26,7 +26,7 @@ class PersonController {
     // MARK: - CRUD Functions
     
     func createPerson(name: String, photo: UIImage) {
-        guard let photoData = UIImageJPEGRepresentation(photo, 1) as NSData? else { return }
+        guard let photoData = photo.jpegData(compressionQuality: 1) as NSData? else { return }
         let _ = Person(name: name, photo: photoData, isSelected: false)
         saveToPersistentStore()
     }
